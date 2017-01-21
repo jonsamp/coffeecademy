@@ -1,0 +1,24 @@
+{
+  "method": "Black",
+  "steps": [{
+    "title": "Weigh",
+    "instructions": ["Weigh tea."] ,
+    "image": "",
+    "components": {
+      "gramSlider": {
+        "min": 15,
+        "max": 65
+      }
+    }
+  }, {
+    "title": "Steep",
+    "instructions": ["Steep tea"],
+    "image": "bloom.gif",
+    "components": {
+      "timer": {
+        "start": 60,
+        "stop": 0
+      }
+    }
+  }]
+}
