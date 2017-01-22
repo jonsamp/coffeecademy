@@ -1,0 +1,34 @@
+{
+  "method": "Aeropress",
+  "steps": [{
+    "title": "Weigh",
+    "instructions": ["Weigh out 15 to 65 grams of coffee. Grind to 24 coarsness.", "Wet the filter of the Chemex with warm water, then pour the water out. Place the Chemex on the scale and pour in the coffee grounds."] ,
+    "image": "",
+    "components": {
+      "gramSlider": {
+        "min": 15,
+        "max": 65
+      }
+    }
+  }, {
+    "title": "Bloom",
+    "instructions": ["Pour over ${bloomWater} grams of water over the coffee. Start in the center and wet the grounds."],
+    "image": "bloom.gif",
+    "components": {
+      "timer": {
+        "start": 60,
+        "stop": 0
+      }
+    }
+  }, {
+    "title": "Pour",
+    "instructions": ["Continue to pour over ${pourWater} grams of water over the coffee. Pour around 70 - 100g at a time."],
+    "image": "",
+    "components": {
+      "timer": {
+        "start": 245,
+        "stop": 0
+      }
+    }
+  }]
+}

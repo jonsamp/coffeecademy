@@ -1,0 +1,44 @@
+/* menu title */
+.coffee,
+.tea {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  height: 15vh;
+  padding: 0 2rem;
+  border-bottom: 1px solid #979797;
+  text-transform: uppercase;
+  letter-spacing: 0.075rem;
+}
+
+.coffee {
+  background-color: #2B2B2B;
+  color: #F0F0F0;
+}
+
+.tea {
+  background-color: #F0F0F0;
+}
+
+.image {
+  margin-right: 1rem;
+}
+
+/* menu item */
+
+.item.coffee,
+.item.tea {
+  font-size: 1.25rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #979797;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.item.coffee {
+  background-color: #2B2B2B;
+}

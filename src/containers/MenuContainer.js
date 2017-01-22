@@ -1,6 +1,8 @@
 import React from 'react'
 
-import TitleBar from '../components/TitleBar'
+import TitleBar from '../components/menu/TitleBar'
+import MenuTitle from '../components/menu/MenuTitle'
+import MenuItem from '../components/menu/MenuItem'
 
 export default class MenuContainer extends React.Component {
 
@@ -20,9 +22,7 @@ export default class MenuContainer extends React.Component {
     // The value attr gets passed up to ViewContainer, used in getSelection
     return Object.keys(beverage).map((recipe, index) => {
       return (
-        <button onClick={this.props.getSelection} value={`${type} ${recipe}`} key={index} style={this.styles}>
-          {beverage[recipe].method}
-        </button>
+        <MenuItem onClick={this.props.getSelection} value={`${type} ${recipe}`} key={index} brewMethod={beverage[recipe].method} type={type} />
       )
     })
   }
@@ -31,8 +31,16 @@ export default class MenuContainer extends React.Component {
     return (
       <div>
         <TitleBar />
-        {this.menuItems('coffee')}
-        {this.menuItems('tea')}
+          <div style={{display: 'flex'}}>
+            <div style={{width: '100%', height: '90vh', backgroundColor: '#2B2B2B'}}>
+              <MenuTitle section='coffee' />
+              {this.menuItems('coffee')}
+            </div>
+            <div style={{width: '100%'}}>
+              <MenuTitle section='tea' />
+              {this.menuItems('tea')}
+            </div>
+          </div>
       </div>
     )
   }

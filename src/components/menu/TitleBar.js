@@ -1,7 +1,7 @@
 import React from 'react'
 
-import color from './global/colors.js'
-import logo from '../images/logo.svg'
+import color from '../global/colors.js'
+import logo from '../../images/logo.svg'
 
 const styles = {
   backgroundColor: color.hue2,

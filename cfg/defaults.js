@@ -29,7 +29,7 @@ function getDefaultModules() {
         loader: 'style-loader!css-loader'
       }, {
         test: /\.sass/,
-        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded&indentedSyntax'
+        loader: 'style-loader!css-loader!sass-loader?modules=true&outputStyle=expanded&indentedSyntax'
       }, {
         test: /\.scss/,
         loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]'

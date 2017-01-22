@@ -7,6 +7,7 @@ import InstructionsContainer from './InstructionsContainer'
 // Coffee recipes
 import chemex from '../recipes/chemex.json'
 import pourOver from '../recipes/pourOver.json'
+import aeropress from '../recipes/aeropress.json'
 
 // Tea recipes
 import black from '../recipes/black.json'
@@ -28,7 +29,8 @@ export default class ViewContainer extends React.Component {
   importRecipes = {
     coffee: {
       chemex: chemex,
-      pourOver: pourOver
+      pourOver: pourOver,
+      aeropress: aeropress
     },
     tea: {
       black: black
@@ -42,12 +44,12 @@ export default class ViewContainer extends React.Component {
     })
   }
 
-  getSelection = (selection) => {
+  getSelection = (el) => {
 
     // Gets value from menu button
     // Separates coffee or tea, then finds the brew method
-    let beverage = selection.target.value.split(' ')[0]
-    let method = selection.target.value.split(' ')[1]
+    let beverage = el.target.attributes.value.nodeValue.split(' ')[0]
+    let method = el.target.attributes.value.nodeValue.split(' ')[1]
     let recipe = this.importRecipes[beverage][method]
 
     // Sets state to selected brew method
