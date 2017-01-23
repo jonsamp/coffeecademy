@@ -4,7 +4,7 @@
   font-size: 1.25rem;
   display: flex;
   align-items: center;
-  height: 15vh;
+  height: 14vh;
   padding: 0 2rem;
   border-bottom: 1px solid #979797;
   text-transform: uppercase;
@@ -30,6 +30,8 @@
 .item.tea {
   font-size: 1.25rem;
   padding: 0 2rem;
+  margin-left: 2rem;
+  padding-left: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

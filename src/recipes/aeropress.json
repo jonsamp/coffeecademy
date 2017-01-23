@@ -1,9 +1,14 @@
 {
   "method": "Aeropress",
+  "icon": "aeropress.svg",
+  "grind": 30,
+  "bloomMultiplier": 2,
+  "pourMultiplier": 16,
   "steps": [{
-    "title": "Weigh",
-    "instructions": ["Weigh out 15 to 65 grams of coffee. Grind to 24 coarsness.", "Wet the filter of the Chemex with warm water, then pour the water out. Place the Chemex on the scale and pour in the coffee grounds."] ,
-    "image": "",
+    "title": "Title 1",
+    "summary": "Summary statement",
+    "instructions": "What is your substance, whereof are you made, That millions of strange shadows on you tend? Since every one hath, every one, one shade, And you but one, can every shadow lend." ,
+    "image": "weigh.gif",
     "components": {
       "gramSlider": {
         "min": 15,
@@ -11,8 +16,9 @@
       }
     }
   }, {
-    "title": "Bloom",
-    "instructions": ["Pour over ${bloomWater} grams of water over the coffee. Start in the center and wet the grounds."],
+    "title": "Title 2",
+    "summary": "Summary statement",
+    "instructions": "On Helen's cheek all art of beauty set, And you in Grecian tires are painted new: Speak of the spring, and foison of the year, The one doth shadow of your beauty show, The other as your bounty doth appear; And you in every blessed shape we know.",
     "image": "bloom.gif",
     "components": {
       "timer": {
@@ -21,12 +27,13 @@
       }
     }
   }, {
-    "title": "Pour",
-    "instructions": ["Continue to pour over ${pourWater} grams of water over the coffee. Pour around 70 - 100g at a time."],
-    "image": "",
+    "title": "Title 3",
+    "summary": "Summary statement",
+    "instructions": "O! never say that I was false of heart, Though absence seemed my flame to qualify, As easy might I from my self depart \n\nAs from my soul which in thy breast doth lie: That is my home of love: if I have ranged, Like him that travels, I return again; Just to the time, not with the time exchanged, So that myself bring water for my stain.",
+    "image": "bloom.gif",
     "components": {
       "timer": {
-        "start": 245,
+        "start": 60,
         "stop": 0
       }
     }

@@ -8,9 +8,14 @@ import InstructionsContainer from './InstructionsContainer'
 import chemex from '../recipes/chemex.json'
 import pourOver from '../recipes/pourOver.json'
 import aeropress from '../recipes/aeropress.json'
+import percolator from '../recipes/percolator.json'
 
 // Tea recipes
 import black from '../recipes/black.json'
+import white from '../recipes/white.json'
+import green from '../recipes/green.json'
+import oolong from '../recipes/oolong.json'
+import herb from '../recipes/herb.json'
 
 export default class ViewContainer extends React.Component {
 
@@ -30,10 +35,15 @@ export default class ViewContainer extends React.Component {
     coffee: {
       chemex: chemex,
       pourOver: pourOver,
-      aeropress: aeropress
+      aeropress: aeropress,
+      percolator: percolator
     },
     tea: {
-      black: black
+      green: green,
+      black: black,
+      white: white,
+      oolong: oolong,
+      herb: herb
     }
   }
 

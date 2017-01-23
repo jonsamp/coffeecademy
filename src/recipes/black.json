@@ -1,9 +1,14 @@
 {
   "method": "Black",
+  "icon": "black.svg",
+  "grind": 30,
+  "bloomMultiplier": 2,
+  "pourMultiplier": 16,
   "steps": [{
-    "title": "Weigh",
-    "instructions": ["Weigh tea."] ,
-    "image": "",
+    "title": "Title 1",
+    "summary": "Summary statement",
+    "instructions": "What is your substance, whereof are you made, That millions of strange shadows on you tend? Since every one hath, every one, one shade, And you but one, can every shadow lend." ,
+    "image": "weigh.gif",
     "components": {
       "gramSlider": {
         "min": 15,
@@ -11,8 +16,20 @@
       }
     }
   }, {
-    "title": "Steep",
-    "instructions": ["Steep tea"],
+    "title": "Title 2",
+    "summary": "Summary statement",
+    "instructions": "On Helen's cheek all art of beauty set, And you in Grecian tires are painted new: Speak of the spring, and foison of the year, The one doth shadow of your beauty show, The other as your bounty doth appear; And you in every blessed shape we know.",
+    "image": "bloom.gif",
+    "components": {
+      "timer": {
+        "start": 60,
+        "stop": 0
+      }
+    }
+  }, {
+    "title": "Title 3",
+    "summary": "Summary statement",
+    "instructions": "O! never say that I was false of heart, Though absence seemed my flame to qualify, As easy might I from my self depart \n\nAs from my soul which in thy breast doth lie: That is my home of love: if I have ranged, Like him that travels, I return again; Just to the time, not with the time exchanged, So that myself bring water for my stain.",
     "image": "bloom.gif",
     "components": {
       "timer": {

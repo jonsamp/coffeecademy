@@ -1,0 +1,105 @@
+h1,
+h3,
+p {
+  padding: 0 2rem;
+  overflow: scroll;
+}
+
+h1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.imageWrapper {
+  height: 30vh
+}
+
+.image {
+  width: 100%;
+}
+
+.wrapper {
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 80%;
+}
+
+.nav {
+  height: 8vh;
+  background-color: #571800;
+  color: #F0F0F0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span {
+  padding: 0 1rem;
+}
+
+.button {
+  height: 8vh;
+  width: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.075rem;
+  flex: 1;
+}
+
+.next {
+  background-color: #FF5000;
+}
+
+.breadCrumb {
+  display: flex;
+  width: 100%;
+  padding: 0 4rem;
+  flex: 4;
+}
+
+.active,
+.inactive {
+  padding-bottom: 0.45rem;
+  margin: 0 0.5rem;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.active {
+  border-bottom: 0.25rem solid #FF5000;
+}
+
+.inactive {
+  border-bottom: 0.25rem solid #752100;
+}
+
+.gramSlider {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F0F0F0;
+}
+
+.gramSlider h1 {
+  font-weight: lighter;
+  font-size: 7rem;
+  font-family: Courier New;
+  line-height: 6rem;
+  margin-bottom: 0;
+  margin-top: -4rem;
+  padding: 0;
+}
+
+.gramSlider h3 {
+  font-weight: lighter;
+  letter-spacing: 0.075rem;
+  margin-bottom: 4rem;
+}

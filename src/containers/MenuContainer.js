@@ -22,7 +22,7 @@ export default class MenuContainer extends React.Component {
     // The value attr gets passed up to ViewContainer, used in getSelection
     return Object.keys(beverage).map((recipe, index) => {
       return (
-        <MenuItem onClick={this.props.getSelection} value={`${type} ${recipe}`} key={index} brewMethod={beverage[recipe].method} type={type} />
+        <MenuItem onClick={this.props.getSelection} value={`${type} ${recipe}`} key={index} brewMethod={beverage[recipe].method} type={type} icon={beverage[recipe].icon} />
       )
     })
   }

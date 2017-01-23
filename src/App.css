@@ -5,3 +5,54 @@ body {
   background-color: #F0F0F0;
   color: #2B2B2B;
 }
+
+.rc-slider {
+  max-width: 75%;
+  margin: auto;
+}
+
+.rc-slider .rc-slider-rail {
+  background-color: #571800;
+  height: 1rem;
+  border-radius: 6px;
+}
+
+.rc-slider .rc-slider-track {
+  background-color: #752100;
+  height: 1rem;
+}
+
+.rc-slider .rc-slider-handle {
+  background-color: #FF5000;
+  border: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: relative;
+  top: -0.5rem;
+  box-shadow: 0 0 8px 2px rgba(0,0,0,.3);
+}
+
+.rc-slider-tooltip-inner {
+  font-size: 1rem !important;
+  color: #F0F0F0 !important;
+  background-color: #000000 !important;
+  padding: 0rem 0.75rem !important;
+  box-shadow: 0 0 8px 2px rgba(0,0,0,.2) !important;
+  min-width: 0 !important;
+  height: 2.25rem !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow {
+  bottom: 2px !important;
+  left: 50% !important;
+  margin-left: -7px !important;
+  border-width: 8px 9px 0 !important;
+  border-top-color: #000000 !important;
+}

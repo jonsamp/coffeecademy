@@ -1,6 +1,6 @@
 {
-  "method": "Pour Over",
-  "icon": "pour-over.svg",
+  "method": "White",
+  "icon": "white.svg",
   "grind": 30,
   "bloomMultiplier": 2,
   "pourMultiplier": 16,

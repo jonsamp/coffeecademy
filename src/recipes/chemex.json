@@ -1,18 +1,25 @@
 {
   "method": "Chemex",
+  "icon": "chemex.svg",
+  "grind": 30,
+  "bloomMultiplier": 2,
+  "pourMultiplier": 16,
   "steps": [{
     "title": "Weigh",
-    "instructions": ["Weigh out 15 to 65 grams of coffee. Grind to 24 coarsness.", "Wet the filter of the Chemex with warm water, then pour the water out. Place the Chemex on the scale and pour in the coffee grounds."] ,
-    "image": "",
+    "summary": "Weigh coffee and grind.",
+    "instructions": "Weigh out 15 to 65 grams of coffee. Grind to 24 coarsness. Wet the filter of the Chemex with warm water, then pour the water out. Place the Chemex on the scale and pour in the coffee grounds." ,
+    "image": "weigh.gif",
     "components": {
       "gramSlider": {
         "min": 15,
-        "max": 65
+        "max": 65,
+        "gramsPerCup": 15
       }
     }
   }, {
     "title": "Bloom",
-    "instructions": ["Pour over ${bloomWater} grams of water over the coffee. Start in the center and wet the grounds."],
+    "summary": "Pour ${bloomWater} grams.",
+    "instructions": "Pour over ${bloomWater} grams of water over the coffee. Start in the center and wet the grounds. Once the grounds are wet, wait for 1 minute.",
     "image": "bloom.gif",
     "components": {
       "timer": {
@@ -21,12 +28,13 @@
       }
     }
   }, {
-    "title": "Pour",
-    "instructions": ["Continue to pour over ${pourWater} grams of water over the coffee. Pour around 70 - 100g at a time."],
-    "image": "",
+    "title": "Pour Over",
+    "summary": "Pour over ${pourWater} grams.",
+    "instructions": "Continue to pour over ${pourWater} grams of water over the coffee. Pour around 70 - 100g at a time.",
+    "image": "bloom.gif",
     "components": {
       "timer": {
-        "start": 245,
+        "start": 60,
         "stop": 0
       }
     }
