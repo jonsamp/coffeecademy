@@ -23,8 +23,7 @@
     "image": "bloom.gif",
     "components": {
       "timer": {
-        "start": 60,
-        "stop": 0
+        "seconds": 60
       }
     }
   }, {
@@ -34,8 +33,7 @@
     "image": "bloom.gif",
     "components": {
       "timer": {
-        "start": 60,
-        "stop": 0
+        "seconds": 60
       }
     }
   }]

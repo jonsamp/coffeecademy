@@ -1,5 +1,6 @@
 import React from 'react'
 import GramSlider from '../components/instructions/GramSlider'
+import CountdownContainer from './CountdownContainer'
 
 export default class ComponentContainer extends React.Component {
 
@@ -10,8 +11,9 @@ export default class ComponentContainer extends React.Component {
     if (component.gramSlider) {
       let slider = component.gramSlider
       return <GramSlider setGrams={this.props.setGrams} currentGrams={this.props.currentGrams} min={slider.min} max={slider.max} gramsPerCup={slider.gramsPerCup} />
+
     } else if (component.timer) {
-      return <h1 style={{color: 'white', fontSize: '7rem', lineHeight: '1'}}>0:00</h1>
+      return <CountdownContainer seconds={component.timer.seconds} advanceStep={this.props.advanceStep}/>
     }
   }
 

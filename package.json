@@ -66,8 +66,11 @@
   "dependencies": {
     "core-js": "^2.0.0",
     "normalize.css": "^4.0.0",
+    "rc-progress": "^2.0.6",
     "rc-slider": "^5.4.3",
     "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react-countdown-clock": "^1.0.9",
+    "react-dom": "^15.0.0",
+    "react-progress-label": "^1.2.1"
   }
 }

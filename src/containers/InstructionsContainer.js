@@ -5,9 +5,6 @@ import ComponentContainer from '../containers/ComponentContainer'
 
 export default class InstructionsContainer extends React.Component {
 
-  // TODO:
-  // Interpolate instructions with correct values
-
   state = {
     currentStep: 0,
     lastStep: this.props.currentRecipe.steps.length - 1,
@@ -20,7 +17,7 @@ export default class InstructionsContainer extends React.Component {
 
     let currentStep = this.props.currentRecipe.steps[this.state.currentStep]
     // Sets initial grams to the minimum for the GramSlider component
-    if(currentStep.components.gramSlider) {
+    if (currentStep.components.gramSlider) {
       this.setState({
         grams: currentStep.components.gramSlider.min,
         bloomWater: currentStep.components.gramSlider.min * this.props.currentRecipe.bloomMultiplier,
@@ -32,8 +29,8 @@ export default class InstructionsContainer extends React.Component {
   setGrams = (v) => {
     this.setState({
       grams: v,
-      bloomWater: v,
-      pourWater: v
+      bloomWater: v * this.props.currentRecipe.bloomMultiplier,
+      pourWater: v * this.props.currentRecipe.pourMultiplier
     })
   }
 
@@ -41,6 +38,7 @@ export default class InstructionsContainer extends React.Component {
 
     // If last step, toggle the menu
     if (this.state.currentStep === this.state.lastStep) {
+      console.log('The recipe is complete.');
       this.props.toggleMenu()
     } else {
 
@@ -68,10 +66,11 @@ export default class InstructionsContainer extends React.Component {
       let interpolatedSummary = this.interpolateGrams(currentStep.summary)
       let interpolatedInstruction = this.interpolateGrams(currentStep.instructions)
 
+
       return (
         <div style={{ display: 'flex', width: '100%'}}>
         <Step title={currentStep.title} summary={interpolatedSummary} instructions={interpolatedInstruction} image={currentStep.image} />
-        <ComponentContainer currentStep={currentStep} setGrams={this.setGrams} currentGrams={this.state.grams}/>
+        <ComponentContainer currentStep={currentStep} setGrams={this.setGrams} currentGrams={this.state.grams} advanceStep={this.advanceStep}/>
         </div>
       )
     }

@@ -28,22 +28,21 @@ export default class ViewContainer extends React.Component {
 
   state = {
     menuVisible: true,
-    currentRecipe: null
-  }
-
-  importRecipes = {
-    coffee: {
-      chemex: chemex,
-      pourOver: pourOver,
-      aeropress: aeropress,
-      percolator: percolator
-    },
-    tea: {
-      green: green,
-      black: black,
-      white: white,
-      oolong: oolong,
-      herb: herb
+    currentRecipe: null,
+    recipes: {
+      coffee: {
+        chemex: chemex,
+        pourOver: pourOver,
+        aeropress: aeropress,
+        percolator: percolator
+      },
+      tea: {
+        green: green,
+        black: black,
+        white: white,
+        oolong: oolong,
+        herb: herb
+      }
     }
   }
 
@@ -60,7 +59,7 @@ export default class ViewContainer extends React.Component {
     // Separates coffee or tea, then finds the brew method
     let beverage = el.target.attributes.value.nodeValue.split(' ')[0]
     let method = el.target.attributes.value.nodeValue.split(' ')[1]
-    let recipe = this.importRecipes[beverage][method]
+    let recipe = this.state.recipes[beverage][method]
 
     // Sets state to selected brew method
     this.setState({
@@ -73,7 +72,7 @@ export default class ViewContainer extends React.Component {
 
   currentView() {
     if (this.state.menuVisible) {
-      return <MenuContainer getSelection={this.getSelection} recipes={this.importRecipes} />
+      return <MenuContainer getSelection={this.getSelection} recipes={this.state.recipes} />
     } else {
       return <InstructionsContainer currentRecipe={this.state.currentRecipe} toggleMenu={this.toggleMenu} />
     }
