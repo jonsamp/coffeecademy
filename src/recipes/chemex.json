@@ -5,35 +5,41 @@
   "bloomMultiplier": 2,
   "pourMultiplier": 16,
   "steps": [{
-    "title": "Weigh",
-    "summary": "Weigh coffee and grind.",
-    "instructions": "Weigh out 15 to 65 grams of coffee. Grind to 24 coarsness. Wet the filter of the Chemex with warm water, then pour the water out. Place the Chemex on the scale and pour in the coffee grounds." ,
-    "image": "weigh.gif",
+    "title": "Prep & preheat",
+    "summary": "Weigh coffee and grind. Pre-wet filter. Heat water.",
+    "instructions": "Place the Chemex Filter in the brewer with single fold away from the spout and multiple folds lined up against the spout. \n\nRinse the filter with hot water to get a nice even seal all the way around. This preheats the brewer and gets rid of any paper flavor from the filter. Dump the rinse water and fold the filter toward the spout to reinforce this area." ,
+    "image": "",
+    "components": {}
+  }, {
+    "title": "Weigh & grind",
+    "summary": "",
+    "instructions": "Weigh out 15 to 65 grams of coffee. Grind to 24 coarsness. Center the coffee in your brewer and zero out the scale.",
+    "image": "",
     "components": {
       "gramSlider": {
         "min": 15,
-        "max": 65,
-        "gramsPerCup": 15
+        "max": 60,
+        "gramsPerCup": 16
       }
     }
   }, {
     "title": "Bloom",
-    "summary": "Pour ${bloomWater} grams.",
-    "instructions": "Pour over ${bloomWater} grams of water over the coffee. Start in the center and wet the grounds. Once the grounds are wet, wait for 1 minute.",
-    "image": "bloom.gif",
+    "summary": "Pour ${bloomWater} grams of water over grounds.",
+    "instructions": "Pour over ${bloomWater} grams of water over the coffee. Start in the center and wet the grounds with water. Once the grounds are wet, wait for 45 seconds. If the grounds are fresh, you may see slight bubbling on top of the grounds occur during this time.",
+    "image": "https://media.giphy.com/media/ly5DEigDRN6Ba/source.gif",
     "components": {
       "timer": {
-        "seconds": 60
+        "seconds": 45
       }
     }
   }, {
     "title": "Pour Over",
-    "summary": "Pour over ${pourWater} grams.",
-    "instructions": "Continue to pour over ${pourWater} grams of water over the coffee. Pour around 70 - 100g at a time.",
-    "image": "bloom.gif",
+    "summary": "Pour over water until ${pourWater} grams.",
+    "instructions": "Continue to pour over until you reach ${pourWater} grams of water over the coffee. Pour with a wiggling motion, then a gentle spiral until the volume reaches about a fingertip down from the top of the rim. \n\nPour over the dark spots and avoid the light ones. Use the water to stir the grounds inside the cone.",
+    "image": "",
     "components": {
       "timer": {
-        "seconds": 60
+        "seconds": 240
       }
     }
   }]

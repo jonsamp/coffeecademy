@@ -6,22 +6,27 @@ import ComponentContainer from '../containers/ComponentContainer'
 export default class InstructionsContainer extends React.Component {
 
   state = {
-    currentStep: 0,
+    stepIndex: 0,
     lastStep: this.props.currentRecipe.steps.length - 1,
+    currentStep: this.props.currentRecipe.steps[0],
     grams: null,
     bloomWater: null,
     pourWater: null
   }
 
   componentDidMount() {
-
-    let currentStep = this.props.currentRecipe.steps[this.state.currentStep]
     // Sets initial grams to the minimum for the GramSlider component
-    if (currentStep.components.gramSlider) {
+    this.initializeGramSlider()
+  }
+
+
+  initializeGramSlider() {
+    console.log('gramSlider? ', this.state.currentStep.components.gramSlider ? 'yes' : 'no');
+    if (this.state.currentStep.components.gramSlider) {
       this.setState({
-        grams: currentStep.components.gramSlider.min,
-        bloomWater: currentStep.components.gramSlider.min * this.props.currentRecipe.bloomMultiplier,
-        pourWater: currentStep.components.gramSlider.min * this.props.currentRecipe.pourMultiplier
+        grams: this.state.currentStep.components.gramSlider.min,
+        bloomWater: this.state.currentStep.components.gramSlider.min * this.props.currentRecipe.bloomMultiplier,
+        pourWater: this.state.currentStep.components.gramSlider.min * this.props.currentRecipe.pourMultiplier
       })
     }
   }
@@ -36,15 +41,22 @@ export default class InstructionsContainer extends React.Component {
 
   advanceStep = () => {
 
+    let stepIndex = this.state.stepIndex + 1
+
     // If last step, toggle the menu
-    if (this.state.currentStep === this.state.lastStep) {
-      console.log('The recipe is complete.');
+    if (this.state.stepIndex === this.state.lastStep) {
+      console.log('The recipe is complete.')
       this.props.toggleMenu()
     } else {
 
       // Advance current step
       this.setState({
-        currentStep: ++this.state.currentStep
+        stepIndex: stepIndex,
+        currentStep: this.props.currentRecipe.steps[stepIndex]
+      }, () => {
+
+        // Sets up gramslider
+        this.initializeGramSlider()
       })
     }
   }
@@ -58,19 +70,45 @@ export default class InstructionsContainer extends React.Component {
     return this.state[word]
   }
 
+  formatInstructions(text) {
+    return text.split('\n').map(function(item, index) {
+      return (
+        <span key={index}>
+          {item}
+          <br/>
+        </span>
+      )
+    })
+  }
+
+  isEmptyObject(obj) {
+    for(var prop in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, prop)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+
+
   displayStep() {
 
     // Only create the elements when there is a recipe
     if (this.props.currentRecipe) {
-      let currentStep = this.props.currentRecipe.steps[this.state.currentStep]
-      let interpolatedSummary = this.interpolateGrams(currentStep.summary)
-      let interpolatedInstruction = this.interpolateGrams(currentStep.instructions)
-
+      // let currentStep = this.props.currentRecipe.steps[this.state.stepIndex]
+      let interpolatedSummary = this.interpolateGrams(this.state.currentStep.summary)
+      let interpolatedInstruction = this.interpolateGrams(this.state.currentStep.instructions)
+      let component;
+      let emptyComponent = this.isEmptyObject(this.state.currentStep.components)
+      if (!emptyComponent) {
+        component = <ComponentContainer currentStep={this.state.currentStep} setGrams={this.setGrams} currentGrams={this.state.grams} advanceStep={this.advanceStep}/>
+      }
 
       return (
         <div style={{ display: 'flex', width: '100%'}}>
-        <Step title={currentStep.title} summary={interpolatedSummary} instructions={interpolatedInstruction} image={currentStep.image} />
-        <ComponentContainer currentStep={currentStep} setGrams={this.setGrams} currentGrams={this.state.grams} advanceStep={this.advanceStep}/>
+        <Step title={this.state.currentStep.title} summary={interpolatedSummary} instructions={this.formatInstructions(interpolatedInstruction)} image={this.state.currentStep.image} emptyComponent={emptyComponent}/>
+          {component}
         </div>
       )
     }

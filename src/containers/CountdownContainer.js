@@ -66,7 +66,7 @@ export default class CountdownTimer extends React.Component {
 
   percentComplete() {
 
-    let percent = (1 - ((this.state.secondsRemaining - 1)/ this.props.seconds)) * 100
+    let percent = (1 - ((this.state.secondsRemaining )/ this.props.seconds)) * 100
     return percent
   }
 
