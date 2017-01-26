@@ -23,7 +23,6 @@ const Nav = ({
   return (
     <div className={styles.nav}>
       <div onClick={toggleMenu} className={styles.button}>Menu</div>
-
         {stepsBreadCrumb()}
       <div onClick={nextStep} className={[styles.button, styles.next].join(' ')}>Next</div>
     </div>

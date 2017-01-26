@@ -118,7 +118,7 @@ export default class InstructionsContainer extends React.Component {
     return (
       <div>
         {this.displayStep()}
-        <Nav nextStep={this.advanceStep} toggleMenu={this.props.toggleMenu} recipe={this.props.currentRecipe} currentStep={this.state.currentStep}/>
+        <Nav nextStep={this.advanceStep} toggleMenu={this.props.toggleMenu} recipe={this.props.currentRecipe} currentStep={this.state.stepIndex}/>
       </div>
     )
   }
