@@ -1,6 +1,6 @@
 {
   "method": "Aeropress",
-  "icon": "aeropress.svg",
+  "icon": "aeropress",
   "grind": 30,
   "bloomMultiplier": 2,
   "pourMultiplier": 16,

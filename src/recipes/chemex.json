@@ -1,6 +1,6 @@
 {
   "method": "Chemex",
-  "icon": "chemex.svg",
+  "icon": "chemex",
   "grind": 30,
   "bloomMultiplier": 2,
   "pourMultiplier": 16,

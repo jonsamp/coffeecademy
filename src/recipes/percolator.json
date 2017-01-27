@@ -1,6 +1,6 @@
 {
   "method": "Percolator",
-  "icon": "percolator.svg",
+  "icon": "percolator",
   "grind": 30,
   "bloomMultiplier": 2,
   "pourMultiplier": 16,
