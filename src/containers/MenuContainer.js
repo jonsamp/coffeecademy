@@ -6,7 +6,6 @@ import MenuItem from '../components/menu/MenuItem'
 
 export default class MenuContainer extends React.Component {
 
-  // TODO: Move styles to presentational component w/ DOM elements
   styles = {
     width: '100%',
     margin: '1rem 0',
@@ -36,10 +35,10 @@ export default class MenuContainer extends React.Component {
               <MenuTitle section='coffee' />
               {this.menuItems('coffee')}
             </div>
-            <div style={{width: '100%', backgroundColor: '#F0F0F0', height: '90vh'}}>
+            {/* <div style={{width: '100%', backgroundColor: '#F0F0F0', height: '90vh'}}>
               <MenuTitle section='tea' />
               {this.menuItems('tea')}
-            </div>
+            </div> */}
           </div>
       </div>
     )

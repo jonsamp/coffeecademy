@@ -23,7 +23,7 @@ const Step = ({
   return (
     <div className={styles.wrapper} style={style}>
       <div>
-      <h1>{title}</h1>
+      <h1 className={styles.stepTitle}>{title}</h1>
       <h3>{summary}</h3>
       <p>{instructions}</p>
       </div>
