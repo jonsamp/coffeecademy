@@ -8,7 +8,8 @@ export default class CountdownTimer extends React.Component {
     this.state = {
       secondsRemaining: 0,
       interval: null,
-      seconds: props.seconds
+      seconds: props.seconds,
+      timerRunning: false
     }
   }
 
@@ -27,6 +28,16 @@ export default class CountdownTimer extends React.Component {
     }
 
     return this.state.secondsRemaining
+  }
+
+  startCountdown = () => {
+    if (!this.state.timerRunning) {
+      this.setState({ timerRunning: true })
+      this.interval = setInterval(this.countdown, 1000)
+    } else {
+      this.setState({ timerRunning: false })
+      clearInterval(this.interval)
+    }
   }
 
   formatSeconds(time) {
@@ -51,39 +62,23 @@ export default class CountdownTimer extends React.Component {
     return ret;
   }
 
-  startCountdown() {
-
-    if (this.interval) {
-      clearInterval(this.interval)
-    }
-
-    this.setState({
-      secondsRemaining: this.props.seconds
-    })
-
-    this.interval = setInterval(this.countdown, 1000)
-  }
-
   percentComplete() {
-
     let percent = (1 - ((this.state.secondsRemaining )/ this.props.seconds)) * 100
     return percent
   }
 
   componentDidMount() {
-    this.setState({
-      secondsRemaining: this.props.seconds
-    }, () => {
-      this.startCountdown()
-    })
-  }
-
-  componentWillReceiveProps() {
     clearInterval(this.interval)
     this.setState({
       secondsRemaining: this.props.seconds
-    }, () => {
-      this.startCountdown()
+    })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    clearInterval(this.interval)
+    this.setState({
+      secondsRemaining: nextProps.seconds,
+      timerRunning: false
     })
   }
 
@@ -92,6 +87,6 @@ export default class CountdownTimer extends React.Component {
   }
 
   render() {
-    return <Clock time={this.formatSeconds(this.state.secondsRemaining)} percent={this.percentComplete()} />
+    return <Clock time={this.formatSeconds(this.state.secondsRemaining)} percent={this.percentComplete()} startTimer={this.startCountdown} timerRunning={this.state.timerRunning}/>
   }
 }

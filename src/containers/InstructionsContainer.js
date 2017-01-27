@@ -21,7 +21,6 @@ export default class InstructionsContainer extends React.Component {
 
 
   initializeGramSlider() {
-    console.log('gramSlider? ', this.state.currentStep.components.gramSlider ? 'yes' : 'no');
     if (this.state.currentStep.components.gramSlider) {
       this.setState({
         grams: this.state.currentStep.components.gramSlider.min,
