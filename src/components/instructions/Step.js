@@ -24,8 +24,8 @@ const Step = ({
     <div className={styles.wrapper} style={style}>
       <div>
       <h1 className={styles.stepTitle}>{title}</h1>
-      <h3>{summary}</h3>
-      <p>{instructions}</p>
+      <h3 className={styles.step}>{summary}</h3>
+      <p className={styles.step}>{instructions}</p>
       </div>
       <div className={styles.imageWrapper}>
       <img src={image} className={styles.image}/>
