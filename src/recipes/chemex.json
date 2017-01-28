@@ -30,7 +30,7 @@
     "image": "https://s3.amazonaws.com/coffeecademy/bloom.gif",
     "components": {
       "timer": {
-        "seconds": 3
+        "seconds": 45
       }
     }
   }, {
