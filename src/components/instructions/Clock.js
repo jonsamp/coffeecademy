@@ -1,5 +1,6 @@
 import React from 'react'
 import { Circle } from 'rc-progress'
+import Sound from 'react-sound'
 import styles from './index.scss'
 
 const Clock = ({

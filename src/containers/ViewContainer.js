@@ -11,11 +11,11 @@ import aeropress from '../recipes/aeropress.json'
 import percolator from '../recipes/percolator.json'
 
 // Tea recipes
-import black from '../recipes/black.json'
-import white from '../recipes/white.json'
-import green from '../recipes/green.json'
-import oolong from '../recipes/oolong.json'
-import herb from '../recipes/herb.json'
+// import black from '../recipes/black.json'
+// import white from '../recipes/white.json'
+// import green from '../recipes/green.json'
+// import oolong from '../recipes/oolong.json'
+// import herb from '../recipes/herb.json'
 
 export default class ViewContainer extends React.Component {
 
@@ -35,14 +35,14 @@ export default class ViewContainer extends React.Component {
         pourOver: pourOver,
         aeropress: aeropress,
         percolator: percolator
-      },
-      tea: {
-        green: green,
-        black: black,
-        white: white,
-        oolong: oolong,
-        herb: herb
       }
+      // tea: {
+      //   green: green,
+      //   black: black,
+      //   white: white,
+      //   oolong: oolong,
+      //   herb: herb
+      // }
     }
   }
 

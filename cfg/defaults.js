@@ -27,27 +27,37 @@ function getDefaultModules() {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
-      }, {
+      },
+      {
         test: /\.sass/,
-        loader: 'style-loader!css-loader!sass-loader?modules=true&outputStyle=expanded&indentedSyntax'
-      }, {
+        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded&indentedSyntax'
+      },
+      {
         test: /\.scss/,
-        loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]'
-      }, {
+        loaders: ['style?sourceMap',
+        'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+        'resolve-url',
+        'sass?sourceMap']
+      },
+      {
         test: /\.less/,
         loader: 'style-loader!css-loader!less-loader'
-      }, {
+      },
+      {
         test: /\.styl/,
         loader: 'style-loader!css-loader!stylus-loader'
-      }, {
+      },
+      {
         test: /\.(png|jpg|gif|woff|woff2)$/,
         loader: 'url-loader?limit=8192'
-      }, {
+      },
+      {
         test: /\.(mp4|ogg|svg)$/,
         loader: 'file-loader'
-      }, {
-        test: /\.json$/,
-        loader: 'json-loader'
+      },
+      {
+        test: /\.json/,
+          loader: 'json-loader'
       }
     ]
   };
@@ -55,7 +65,7 @@ function getDefaultModules() {
 
 module.exports = {
   srcPath: srcPath,
-  publicPath: 'assets/',
+  publicPath: '/assets/',
   port: dfltPort,
   getDefaultModules: getDefaultModules
 };

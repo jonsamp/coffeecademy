@@ -1,5 +1,6 @@
 import React from 'react'
 import Clock from '../components/instructions/Clock'
+import Sound from 'react-sound'
 
 export default class CountdownTimer extends React.Component {
 
@@ -9,7 +10,8 @@ export default class CountdownTimer extends React.Component {
       secondsRemaining: 0,
       interval: null,
       seconds: props.seconds,
-      timerRunning: false
+      timerRunning: false,
+      play: Sound.status.PAUSED
     }
   }
 
@@ -21,6 +23,7 @@ export default class CountdownTimer extends React.Component {
     this.percentComplete()
 
     if (this.state.secondsRemaining <= 0) {
+      this.setState({ play: Sound.status.PLAYING })
       clearInterval(this.interval);
 
       // When the timer is finished, call this:
@@ -67,6 +70,10 @@ export default class CountdownTimer extends React.Component {
     return percent
   }
 
+  onFinishedPlaying = () => {
+    this.setState({ play: Sound.status.PAUSED })
+  }
+
   componentDidMount() {
     clearInterval(this.interval)
     this.setState({
@@ -87,6 +94,11 @@ export default class CountdownTimer extends React.Component {
   }
 
   render() {
-    return <Clock time={this.formatSeconds(this.state.secondsRemaining)} percent={this.percentComplete()} startTimer={this.startCountdown} timerRunning={this.state.timerRunning}/>
+    return (
+      <div>
+      <Clock time={this.formatSeconds(this.state.secondsRemaining)} percent={this.percentComplete()} startTimer={this.startCountdown} timerRunning={this.state.timerRunning}/>
+          <Sound url={'https://s3.amazonaws.com/coffeecademy/ding.mp3'} playStatus={this.state.play} onFinishedPlaying={this.onFinishedPlaying}/>
+        </div>
+      )
   }
 }
