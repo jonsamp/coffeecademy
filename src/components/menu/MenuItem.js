@@ -31,8 +31,8 @@ const MenuItem = ({
       <div style={{display: 'flex', alignItems: 'center'}} value={value}>
         <img src={icon} style={{width: '3.5rem', marginRight: '1.5rem'}} value={value}/>
         <div>
-          <span className={styles.methodTitle}>{brewMethod}</span>
-          <p className={styles.description}>{description}</p>
+          <span className={styles.methodTitle} value={value}>{brewMethod}</span>
+          <p className={styles.description} value={value}>{description}</p>
         </div>
       </div>
       <img src={rightArrow} value={value}/>

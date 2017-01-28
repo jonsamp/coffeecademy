@@ -45,7 +45,8 @@ export default class InstructionsContainer extends React.Component {
     // If last step, toggle the menu
     if (this.state.stepIndex === this.state.lastStep) {
       // console.log('The recipe is complete.')
-      this.props.toggleMenu()
+      this.props.toggleSummary()
+      // this.props.toggleMenu()
     } else {
 
       // Advance current step
