@@ -11,7 +11,8 @@ export default class InstructionsContainer extends React.Component {
     currentStep: this.props.currentRecipe.steps[0],
     grams: null,
     bloomWater: null,
-    pourWater: null
+    pourWater: null,
+    summaryVisible: false
   }
 
   componentDidMount() {
@@ -45,7 +46,7 @@ export default class InstructionsContainer extends React.Component {
     // If last step, toggle the menu
     if (this.state.stepIndex === this.state.lastStep) {
       // console.log('The recipe is complete.')
-      this.props.toggleSummary()
+      this.toggleSummary()
       // this.props.toggleMenu()
     } else {
 
@@ -59,6 +60,13 @@ export default class InstructionsContainer extends React.Component {
         this.initializeGramSlider()
       })
     }
+  }
+
+  toggleSummary = () => {
+    let toggle = this.state.summaryVisible ? false : true
+    this.setState({
+      summaryVisible: toggle
+    })
   }
 
   interpolateGrams(instruction) {
@@ -114,12 +122,34 @@ export default class InstructionsContainer extends React.Component {
     }
   }
 
-  render() {
+  displayInstructions() {
     return (
       <div>
         {this.displayStep()}
         <Nav nextStep={this.advanceStep} toggleMenu={this.props.toggleMenu} recipe={this.props.currentRecipe} currentStep={this.state.stepIndex}/>
       </div>
     )
+  }
+
+  displaySummary() {
+      // let audio = new Audio('https://s3.amazonaws.com/coffeecademy/tada.mp3')
+      // setTimeout(() => { audio.play() }, 1000)
+
+      return (
+        <div>
+          <h1 style={{color: 'white'}}>Summary</h1>
+          <code style={{color: 'white'}}>{JSON.stringify(this.state.grams, null, 2)}</code>
+          <code style={{color: 'white'}}>{JSON.stringify(this.props.currentRecipe, null, 2)}</code>
+          <div style={{color: 'white'}} onClick={this.props.toggleMenu}>MENU</div>
+        </div>
+      )
+  }
+
+  render() {
+    if (this.state.summaryVisible) {
+      return this.displaySummary()
+    } else {
+      return this.displayInstructions()
+    }
   }
 }

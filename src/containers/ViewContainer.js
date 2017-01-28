@@ -21,7 +21,6 @@ export default class ViewContainer extends React.Component {
 
   state = {
     menuVisible: true,
-    summaryVisible: false,
     currentRecipe: null,
     recipes: {
       coffee: {
@@ -48,13 +47,6 @@ export default class ViewContainer extends React.Component {
     })
   }
 
-  toggleSummary = () => {
-    let toggle = this.state.summaryVisible ? false : true
-    this.setState({
-      summaryVisible: toggle
-    })
-  }
-
   getSelection = (el) => {
 
     // Gets value from menu button
@@ -75,18 +67,6 @@ export default class ViewContainer extends React.Component {
   currentView() {
     if (this.state.menuVisible) {
       return <MenuContainer getSelection={this.getSelection} recipes={this.state.recipes} />
-    } else if (this.state.summaryVisible) {
-
-      // let audio = new Audio('https://s3.amazonaws.com/coffeecademy/tada.mp3')
-      // setTimeout(() => { audio.play() }, 1000)
-
-      return (
-        <div>
-          <h1 style={{color: 'white'}}>Summary</h1>
-          <code style={{color: 'white'}}>{JSON.stringify(this.state.currentRecipe, null, 2)}</code>
-          <div style={{color: 'white'}} onClick={this.toggleMenu}>MENU</div>
-        </div>
-      )
     } else {
       return <InstructionsContainer currentRecipe={this.state.currentRecipe} toggleMenu={this.toggleMenu} toggleSummary={this.toggleSummary} />
     }
