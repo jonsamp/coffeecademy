@@ -39,7 +39,7 @@
   justify-content: space-between;
   border-bottom: 1px solid #979797;
   cursor: pointer;
-  text-transform: capitalize;
+  text-transform: none;
   letter-spacing: 0;
 }
 
@@ -49,4 +49,17 @@
 
 .item.tea {
   background-color: #f0f0f0;
+}
+
+.methodTitle {
+  font-size: 1.35rem;
+  padding: 0;
+  letter-spacing: 0.05rem;
+}
+
+.description {
+  padding: 0;
+  margin: 0.5rem 0;
+  font-weight: lighter;
+  font-size: 1rem;
 }

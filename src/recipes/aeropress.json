@@ -1,5 +1,6 @@
 {
   "method": "Aeropress",
+  "description": "Produces a full-bodied and smooth cup. Brews 1 cup.",
   "icon": "aeropress",
   "grind": 30,
   "bloomMultiplier": 2,

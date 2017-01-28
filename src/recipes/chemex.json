@@ -1,5 +1,6 @@
 {
   "method": "Chemex",
+  "description": "Eliminates oils and sediment for a clean cup. Brews 1-4 cups.",
   "icon": "chemex",
   "grind": 30,
   "bloomMultiplier": 2,

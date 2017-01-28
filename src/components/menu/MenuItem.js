@@ -7,6 +7,7 @@ const MenuItem = ({
   value,
   index,
   brewMethod,
+  description,
   type,
   icon
  }) => {
@@ -29,7 +30,10 @@ const MenuItem = ({
     <div className={[styles.item, styles[type]].join(' ')} onClick={onClick} value={value} key={index} icon={icon} style={style}>
       <div style={{display: 'flex', alignItems: 'center'}} value={value}>
         <img src={icon} style={{width: '3.5rem', marginRight: '1.5rem'}} value={value}/>
-        {brewMethod}
+        <div>
+          <span className={styles.methodTitle}>{brewMethod}</span>
+          <p className={styles.description}>{description}</p>
+        </div>
       </div>
       <img src={rightArrow} value={value}/>
     </div>

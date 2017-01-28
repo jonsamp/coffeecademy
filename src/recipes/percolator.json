@@ -1,5 +1,6 @@
 {
   "method": "Percolator",
+  "description": "Puts quantity over quality. Makes 10 cups.",
   "icon": "percolator",
   "grind": 30,
   "bloomMultiplier": 2,

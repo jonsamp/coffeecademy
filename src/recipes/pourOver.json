@@ -1,5 +1,6 @@
 {
   "method": "Pour Over",
+  "description": "Results in a clear brew with nuanced, well-rounded flavor. Brews 1 cup.",
   "icon": "pourOver",
   "grind": 30,
   "bloomMultiplier": 2,
