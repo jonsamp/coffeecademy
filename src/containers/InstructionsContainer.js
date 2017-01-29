@@ -2,6 +2,7 @@ import React from 'react'
 import Step from '../components/instructions/Step'
 import Nav from '../components/instructions/Nav'
 import ComponentContainer from '../containers/ComponentContainer'
+import SummaryContainer from '../containers/SummaryContainer'
 
 export default class InstructionsContainer extends React.Component {
 
@@ -132,16 +133,11 @@ export default class InstructionsContainer extends React.Component {
   }
 
   displaySummary() {
-      // let audio = new Audio('https://s3.amazonaws.com/coffeecademy/tada.mp3')
-      // setTimeout(() => { audio.play() }, 1000)
+      let audio = new Audio('https://s3.amazonaws.com/coffeecademy/tada.mp3')
+      setTimeout(() => { audio.play() }, 1000)
 
       return (
-        <div>
-          <h1 style={{color: 'white'}}>Summary</h1>
-          <code style={{color: 'white'}}>{JSON.stringify(this.state.grams, null, 2)}</code>
-          <code style={{color: 'white'}}>{JSON.stringify(this.props.currentRecipe, null, 2)}</code>
-          <div style={{color: 'white'}} onClick={this.props.toggleMenu}>MENU</div>
-        </div>
+        <SummaryContainer grams={this.state.grams} recipe={this.props.currentRecipe} toggleMenu={this.props.toggleMenu}/>
       )
   }
 

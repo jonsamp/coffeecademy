@@ -1,0 +1,26 @@
+.summaryWrapper {
+  color: #F0F0F0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+
+  .summary {
+    text-align: center;
+  }
+
+  .menu {
+    background-color: #FF5100;
+    width: 10rem;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.075rem;
+  }
+
+  img {
+    width: 10rem;
+  }
+}
