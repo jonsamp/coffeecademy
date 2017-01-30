@@ -88,7 +88,7 @@ export default class SummaryContainer extends React.Component {
     let payload = {
       'username': 'coffee-bot',
       'icon_emoji': ':coffee:',
-      'channel': '#coffeecademy-test',
+      'channel': '#caffeinators',
       'text': `Fresh ${this.props.recipe.method}! (approx. ${Math.round(this.props.grams / 16) } - ${Math.round(this.props.grams / 16) + 1} cups)`
     }
 
