@@ -44,7 +44,8 @@ export default class SummaryContainer extends React.Component {
       })
     })
 
-    // setTimeout(() => { this.props.toggleMenu() }, 60000)
+    // Goes back to the menu after 1 minute
+    setTimeout(() => { this.props.toggleMenu() }, 60000)
   }
 
   calcTotalWeight = (data) => {
