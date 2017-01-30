@@ -23,8 +23,8 @@ export default class CountdownTimer extends React.Component {
     if (this.state.secondsRemaining <= 0) {
 
       // Ding when the timer is finished
-      let audio = new Audio('https://s3.amazonaws.com/coffeecademy/ding.mp3')
-      audio.play()
+      // let audio = new Audio('https://s3.amazonaws.com/coffeecademy/ding.mp3')
+      // audio.play()
 
       // Clear the countdown interval
       clearInterval(this.interval);
