@@ -13,7 +13,8 @@ const Summary = ({
   grams,
   recipe,
   fact,
-  sendMessageToSlack
+  sendMessageToSlack,
+  slackSent
 }) => {
 
   let brewIcons = {
@@ -21,6 +22,20 @@ const Summary = ({
     aeropress,
     pourOver,
     percolator
+  }
+
+  let slackButton
+
+  if (grams > 30) {
+    slackButton = <div className={styles.slackButton} onClick={sendMessageToSlack}>
+      <span><img src={slackMark} /> Slack #caffeinators</span>
+    </div>
+  }
+
+  if (slackSent) {
+    slackButton = <div className={styles.slackButton}>
+      <span><img src={slackMark} /> Sent!</span>
+    </div>
   }
 
   return (
@@ -33,9 +48,7 @@ const Summary = ({
 
       </div>
       <div className={styles.buttons}>
-        <div className={styles.slackButton} onClick={sendMessageToSlack}>
-          <span><img src={slackMark} /> Slack #caffeinators</span>
-        </div>
+        {slackButton}
         <div className={styles.menu} onClick={toggleMenu}>Menu</div>
       </div>
     </div>

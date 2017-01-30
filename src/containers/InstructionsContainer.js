@@ -133,8 +133,8 @@ export default class InstructionsContainer extends React.Component {
   }
 
   displaySummary() {
-      // let audio = new Audio('https://s3.amazonaws.com/coffeecademy/tada.mp3')
-      // setTimeout(() => { audio.play() }, 1000)
+      let audio = new Audio('https://s3.amazonaws.com/coffeecademy/tada.mp3')
+      setTimeout(() => { audio.play() }, 1000)
 
       return (
         <SummaryContainer grams={this.state.grams} recipe={this.props.currentRecipe} toggleMenu={this.props.toggleMenu}/>

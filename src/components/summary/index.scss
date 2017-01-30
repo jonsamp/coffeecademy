@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: space-around;
   height: 100vh;
+  max-width: 75%;
+  margin: auto;
 
   h1 {
     font-size: 2.5rem;
@@ -13,6 +15,7 @@
   p {
     font-size: 1.2rem;
     font-family: 'Libre Baskerville', serif;
+    line-height: 1.8rem;
   }
 
   .summary {
@@ -23,6 +26,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 50%;
   }
 
   .menu {
@@ -36,7 +40,7 @@
   }
 
   .slackButton {
-
+    flex: 2;
     background-color: #F0F0F0;
     color: #2B2B2B;
     padding: 1rem 2rem;
@@ -48,12 +52,14 @@
     span {
       margin: auto;
       display: block;
+      text-align: center;
     }
 
     img {
-      height: 1.5rem;
+      height: 1.25rem;
       width: 10%;
-      float: left;
+      position: relative;
+      top: 0.25rem;
     }
   }
 

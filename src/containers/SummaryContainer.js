@@ -16,7 +16,8 @@ firebase.initializeApp(config);
 export default class SummaryContainer extends React.Component {
 
   state = {
-    fact: ''
+    fact: '',
+    slackSent: false
   }
 
   componentDidMount() {
@@ -84,10 +85,10 @@ export default class SummaryContainer extends React.Component {
 
   sendMessageToSlack = () => {
     let payload = {
-      "username": "coffee-bot",
-      "icon_emoji": ":coffee:",
-      "channel": "#coffeecademy-test",
-      "text": `Fresh ${this.props.recipe.method}!`
+      'username': 'coffee-bot',
+      'icon_emoji': ':coffee:',
+      'channel': '#coffeecademy-test',
+      'text': `Fresh ${this.props.recipe.method}! (approx. ${Math.round(this.props.grams / 16) } - ${Math.round(this.props.grams / 16) + 1} cups)`
     }
 
     let xmlhttp = new XMLHttpRequest(),
@@ -96,11 +97,15 @@ export default class SummaryContainer extends React.Component {
     xmlhttp.open('POST', webhook_url, false);
     xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xmlhttp.send(myJSONStr);
+
+    this.setState({
+      slackSent: true
+    })
   }
 
   render() {
     return (
-      <Summary toggleMenu={this.props.toggleMenu} grams={this.props.grams} recipe={this.props.recipe} fact={this.state.fact} sendMessageToSlack={this.sendMessageToSlack}/>
+      <Summary toggleMenu={this.props.toggleMenu} grams={this.props.grams} recipe={this.props.recipe} fact={this.state.fact} sendMessageToSlack={this.sendMessageToSlack} slackSent={this.state.slackSent}/>
     )
   }
 }
