@@ -53,7 +53,9 @@ export default class SummaryContainer extends React.Component {
     let totalGrams = 0
 
     keys.forEach((key) => {
-      totalGrams = totalGrams + (data[key].grams)
+      if (data[key].grams) {
+        totalGrams = totalGrams + (data[key].grams)
+      }
     })
 
     return `Added all up, we've brewed a total of ${(totalGrams * 0.00220462).toFixed(2)} pounds of coffee with coffeecademy.`

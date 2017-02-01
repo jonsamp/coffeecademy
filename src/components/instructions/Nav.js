@@ -5,18 +5,18 @@ const Nav = ({
   nextStep,
   toggleMenu,
   recipe,
-  currentStep
+  currentStep,
+  goToStep
 }) => {
 
   const stepsBreadCrumb = () => {
     let steps = recipe.steps.map((step, index) => {
       if (index <= currentStep) {
-        return <div className={styles.active} key={index}>{step.title}</div>;
+        return <div className={styles.active} key={index} onClick={goToStep} value={index}>{step.title}</div>;
       } else {
-        return <div className={styles.inactive} key={index}>{step.title}</div>;
+        return <div className={styles.inactive} key={index} onClick={goToStep} value={index}>{step.title}</div>;
       }
     })
-
     return <div className={styles.breadCrumb}>{steps}</div>
   }
 

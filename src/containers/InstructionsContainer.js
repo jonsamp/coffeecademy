@@ -42,7 +42,7 @@ export default class InstructionsContainer extends React.Component {
 
   advanceStep = () => {
 
-    let stepIndex = this.state.stepIndex + 1
+    let stepIndex = Number(this.state.stepIndex) + 1
 
     // If last step, toggle the menu
     if (this.state.stepIndex === this.state.lastStep) {
@@ -58,9 +58,27 @@ export default class InstructionsContainer extends React.Component {
       }, () => {
 
         // Sets up gramslider
-        this.initializeGramSlider()
+        if (this.state.stepIndex <= this.state.lastStep) {
+          this.initializeGramSlider()
+        } else {
+          this.setState({
+            summaryVisible: true
+          })
+        }
       })
     }
+  }
+
+  goToStep = (el) => {
+    let step = el.target.attributes.value.nodeValue
+    this.setState({
+      stepIndex: step,
+      currentStep: this.props.currentRecipe.steps[step]
+    }, () => {
+
+      // Sets up gramslider
+      this.initializeGramSlider()
+    })
   }
 
   toggleSummary = () => {
@@ -102,9 +120,8 @@ export default class InstructionsContainer extends React.Component {
 
 
   displayStep() {
-
     // Only create the elements when there is a recipe
-    if (this.props.currentRecipe) {
+    if (this.props.currentRecipe && this.state.stepIndex <= this.state.lastStep) {
       // let currentStep = this.props.currentRecipe.steps[this.state.stepIndex]
       let interpolatedSummary = this.interpolateGrams(this.state.currentStep.summary)
       let interpolatedInstruction = this.interpolateGrams(this.state.currentStep.instructions)
@@ -127,7 +144,7 @@ export default class InstructionsContainer extends React.Component {
     return (
       <div>
         {this.displayStep()}
-        <Nav nextStep={this.advanceStep} toggleMenu={this.props.toggleMenu} recipe={this.props.currentRecipe} currentStep={this.state.stepIndex}/>
+        <Nav nextStep={this.advanceStep} toggleMenu={this.props.toggleMenu} recipe={this.props.currentRecipe} currentStep={this.state.stepIndex} goToStep={this.goToStep}/>
       </div>
     )
   }
