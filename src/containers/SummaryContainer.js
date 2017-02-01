@@ -33,7 +33,9 @@ export default class SummaryContainer extends React.Component {
 
       let facts = [
         this.calcTotalWeight,
-        this.calcAverageTime
+        this.calcAverageTime,
+        this.numberOfBrews,
+        this.getNumberOfBrew
       ]
 
       // Generate a random fact
@@ -59,6 +61,24 @@ export default class SummaryContainer extends React.Component {
     })
 
     return `Added all up, we've brewed a total of ${(totalGrams * 0.00220462).toFixed(2)} pounds of coffee with coffeecademy.`
+  }
+
+  numberOfBrews = (data) => {
+    return `A total of ${Object.keys(data).length} brews have been made since coffeecademy's inception.`
+  }
+
+  getNumberOfBrew = (data) => {
+    let keys = Object.keys(data)
+    let brewNumber = 0
+
+    keys.forEach((key) => {
+      if (data[key].method === this.props.recipe.method) {
+        brewNumber++
+      }
+    })
+
+    return `We've brewed ${brewNumber} ${this.props.recipe.method}s with coffeecademy.`
+
   }
 
   calcAverageTime = (data) => {
@@ -88,10 +108,10 @@ export default class SummaryContainer extends React.Component {
 
   sendMessageToSlack = () => {
     let payload = {
-      'username': 'coffee-bot',
+      'username': 'caffeine-bot',
       'icon_emoji': ':coffee:',
       'channel': '#caffeinators',
-      'text': `Fresh ${this.props.recipe.method}! (approx. ${Math.round(this.props.grams / 16) } - ${Math.round(this.props.grams / 16) + 1} cups)`
+      'text': `Fresh ${this.props.recipe.method}! (approx. ${Math.round(this.props.grams / 16) } - ${Math.round(this.props.grams / 16) + 1} cups)${ this.state.fact ? `\nFact: ${this.state.fact}` : `` }`
     }
 
     let xmlhttp = new XMLHttpRequest(),

@@ -33,7 +33,7 @@ const Summary = ({
   }
 
   if (slackSent) {
-    slackButton = <div className={styles.slackButton}>
+    slackButton = <div className={styles.slackButton} style={{opacity: '0.75'}}>
       <span><img src={slackMark} /> Sent!</span>
     </div>
   }
@@ -44,7 +44,7 @@ const Summary = ({
         <img src={brewIcons[recipe.icon]} />
         <h1>{`Enjoy the ${recipe.method}!`}</h1>
         <p>{ grams ? `You made ${grams} delicious grams of craft coffee.` : `You may have made some coffee, but you didn't input any grams.`}</p>
-        <p>Fact: {fact}</p>
+        <p>{fact ? `Fact: ${fact}` : ``}</p>
 
       </div>
       <div className={styles.buttons}>
