@@ -20,6 +20,13 @@ p.step,
 h3.step {
   font-family: 'Libre Baskerville', serif;
 }
+p.step {
+  padding: 0;
+}
+
+p li {
+  margin: 1rem 0;
+}
 
 .imageWrapper {
   height: 30vh

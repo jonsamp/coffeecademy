@@ -97,17 +97,6 @@ export default class InstructionsContainer extends React.Component {
     return this.state[word]
   }
 
-  formatInstructions(text) {
-    return text.split('\n').map(function(item, index) {
-      return (
-        <span key={index}>
-          {item}
-          <br/>
-        </span>
-      )
-    })
-  }
-
   isEmptyObject(obj) {
     for(var prop in obj) {
       if (Object.prototype.hasOwnProperty.call(obj, prop)) {
@@ -133,7 +122,7 @@ export default class InstructionsContainer extends React.Component {
 
       return (
         <div style={{ display: 'flex', width: '100%'}}>
-        <Step title={this.state.currentStep.title} summary={interpolatedSummary} instructions={this.formatInstructions(interpolatedInstruction)} image={this.state.currentStep.image} emptyComponent={emptyComponent}/>
+        <Step title={this.state.currentStep.title} summary={interpolatedSummary} instructions={interpolatedInstruction} image={this.state.currentStep.image} emptyComponent={emptyComponent}/>
           {component}
         </div>
       )
