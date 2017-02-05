@@ -8,25 +8,25 @@
   "steps": [{
     "title": "Prep & preheat",
     "summary": "Pre-wet filter. Heat water.",
-    "instructions": "1. Place the Chemex Filter in the brewer with single fold away from the spout and multiple folds lined up against the spout.\n2. Rinse the filter with hot water to get a nice even seal all the way around. This preheats the brewer and gets rid of any paper flavor from the filter.\n3. Dump the rinse water and fold the filter toward the spout to reinforce this area.\n\nTap 'Next' to continue." ,
+    "instructions": "1. Begin boiling water in the kettle.\n2. Place the Chemex Filter in the brewer with multiple folds lined up against the spout.\n3. Rinse the filter with hot water to get a nice even seal all the way around. This preheats the brewer and gets rid of any paper flavor from the filter.\n4. Dump the rinse water and fold the filter toward the spout to reinforce this area.\n\nTap 'Next' to continue." ,
     "image": "",
     "components": {}
   }, {
     "title": "Weigh & grind",
-    "summary": "Grind coffee and grind.",
-    "instructions": "Weigh out 15 to 65 grams of coffee. Grind to 24 coarsness. Center the coffee in your brewer and zero out the scale.\n\nEnter the grams of coffee you'll brew to the right, then tap 'Next' to continue.",
+    "summary": "Weigh coffee and grind.",
+    "instructions": "1. Weigh out 15 to 60 grams of coffee.\n2. Pour the coffee beans in the hopper and grind.\n3. Place the Chemex on the scale, pour the coffee in your brewer, and zero out the scale.\n4. Enter the grams of coffee you'll brew to the right, then tap 'Next' to continue.",
     "image": "https://s3.amazonaws.com/coffeecademy/weigh.gif",
     "components": {
       "gramSlider": {
         "min": 15,
         "max": 60,
-        "gramsPerCup": 16
+        "gramsPerCup": 15
       }
     }
   }, {
     "title": "Bloom",
     "summary": "Pour ${bloomWater} grams of water over grounds.",
-    "instructions": "Pour over ${bloomWater} grams of water over the coffee. Start in the center and wet the grounds with water. Once the grounds are wet, wait for 45 seconds. If the grounds are fresh, you may see slight bubbling on top of the grounds occur during this time.\n\nPress 'Start Timer' to begin.",
+    "instructions": "1. Press 'Start Timer', then pour over ${bloomWater} grams of water over the coffee.\n2. Start in the center and wet the grounds with water. Once the grounds are wet, wait for 45 seconds. If the grounds are fresh, you may see slight bubbling on top of the grounds occur during this time.",
     "image": "https://s3.amazonaws.com/coffeecademy/bloom.gif",
     "components": {
       "timer": {
@@ -36,7 +36,7 @@
   }, {
     "title": "Pour Over",
     "summary": "Pour over water until ${pourWater} grams.",
-    "instructions": "Press 'Start Timer', then continue to pour over until you reach ${pourWater} grams of water over the coffee. \n\nConcentrate the pour toward the center of the Chemex, working your way outwards to about a centimeter from the edge of the slurry. The water stream from the pouring kettle shold be slow enough to fall straight down, not at an angle. \n\nOnce the drips stall to every couple of seconds, your brew is finished.",
+    "instructions": "1. Press 'Start Timer', then continue to pour water over the coffee until you reach ${pourWater} grams of water over the coffee.\n2. Concentrate the pour toward the center of the Chemex, working your way outwards to about a centimeter from the edge of the slurry. The water stream from the pouring kettle shold be slow enough to fall straight down, not at an angle.\n3. Once the drips stall to every couple of seconds, your brew is finished.",
     "image": "https://s3.amazonaws.com/coffeecademy/pour-over.gif",
     "components": {
       "timer": {

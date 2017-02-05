@@ -1,6 +1,10 @@
 h1,
 h3,
 p {
+
+}
+
+.instructionArea {
   padding: 0 3rem;
   overflow: scroll;
 }
@@ -20,12 +24,14 @@ p.step,
 h3.step {
   font-family: 'Libre Baskerville', serif;
 }
-p.step {
-  padding: 0;
-}
 
 p li {
   margin: 1rem 0;
+}
+
+p ol,
+p ul {
+  padding-left: 0;
 }
 
 .imageWrapper {
@@ -43,7 +49,7 @@ p li {
   justify-content: space-between;
   overflow: hidden;
   width: 100%;
-  background-color: #F0F0F0
+  background-color: #F0F0F0;
 }
 
 .nav {

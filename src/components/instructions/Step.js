@@ -24,13 +24,13 @@ const Step = ({
 
   return (
     <div className={styles.wrapper} style={style}>
-      <div>
-      <h1 className={styles.stepTitle}>{title}</h1>
-      <h3 className={styles.step}>{summary}</h3>
-      <p className={styles.step} dangerouslySetInnerHTML={{__html: marked(instructions)}}></p>
+      <div className={styles.instructionArea}>
+        <h1 className={styles.stepTitle}>{title}</h1>
+        <h3 className={styles.step}>{summary}</h3>
+        <p className={styles.step} dangerouslySetInnerHTML={{__html: marked(instructions)}}></p>
       </div>
       <div className={styles.imageWrapper}>
-      <img src={image} className={styles.image}/>
+        {image && <img src={image} className={styles.image}/>}
       </div>
     </div>
   )
