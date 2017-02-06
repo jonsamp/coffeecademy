@@ -8,13 +8,13 @@
   "steps": [{
     "title": "Prep & Pre-heat",
     "summary": "Heat water. Pre-wet filter.",
-    "instructions": "1. Bring your water to a boil then let it cool for about 1 minute.\n2. Place circular paper filter in the Aeropress' slotted cap, then attach to the Aeropress body.\n 3. Place on top of a coffee cup, and wet the filter. Discard any excess water.\n\nPress 'Next' to continue." ,
+    "instructions": "1. Bring your water to a boil then let it cool for about 1 minute.\n2. Place circular paper filter in the Aeropress' slotted cap, then attach to the Aeropress body.\n3. Place on top of a coffee cup, and wet the filter. Discard any excess water.\n\nPress 'Next' to continue." ,
     "image": "https://s3.amazonaws.com/coffeecademy/aeropress-prep.gif",
     "components": {}
   }, {
     "title": "Weigh & Grind",
     "summary": "Weigh coffee and grind.",
-    "instructions": "1. Weigh 10 to 15 grams of coffee.\n 2. Place coffee cup on scale, with Aeropress on top.\n 3. Pour grounds into the Aeropress body.\n4. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
+    "instructions": "1. Weigh 10 to 15 grams of coffee.\n2. Place coffee cup on scale, with Aeropress on top.\n3. Pour grounds into the Aeropress body.\n4. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
     "image": "https://s3.amazonaws.com/coffeecademy/aeropress-weigh.gif",
     "components": {
       "gramSlider": {
@@ -35,8 +35,8 @@
     }
   }, {
     "title": "Press",
-    "summary": "Press coffee.",
-    "instructions": "1. Press 'Start Timer'.\n2. Once the timer has 30 seconds left, insert the plunger, and apply pressure to press coffee into cup.\n3. Cease when you hear a long hiss. Then, remove Aeropress and discard filter and coffee grounds. (Caution, cap is hot).",
+    "summary": "Press coffee after 3 minutes.",
+    "instructions": "1. Press 'Start Timer'.\n2. Once the timer has 30 seconds left, insert the plunger and apply pressure to press coffee into cup.\n3. Cease when you hear a long hiss. Then, remove Aeropress and discard filter and coffee grounds. (Caution, cap is hot).",
     "image": "https://s3.amazonaws.com/coffeecademy/aeropress-press.gif",
     "components": {
       "timer": {
