@@ -14,7 +14,6 @@ const MenuItem = ({
    let style;
 
    if (
-     brewMethod === 'Pour Over' ||
      brewMethod === 'Aeropress' ||
      brewMethod === 'Percolator'
    ) {

@@ -14,11 +14,7 @@ const Step = ({
   if (emptyComponent) {
     style = {
       margin: 'auto',
-      position: 'relative',
-      top: '5vh',
-      borderRadius: '6px',
-      maxWidth: '33rem',
-      padding: '0 3rem 0 1rem'
+      maxWidth: '33rem'
     }
   }
 

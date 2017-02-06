@@ -47,10 +47,6 @@ export default class MenuContainer extends React.Component {
               <MenuTitle section='coffee' />
               {this.menuItems('coffee')}
             </div>
-            {/* <div style={{width: '100%', backgroundColor: '#F0F0F0', height: '90vh'}}>
-              <MenuTitle section='tea' />
-              {this.menuItems('tea')}
-            </div> */}
           </div>
       </div>
     )

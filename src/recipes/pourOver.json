@@ -6,36 +6,41 @@
   "bloomMultiplier": 2,
   "pourMultiplier": 16,
   "steps": [{
-    "title": "Title 1",
-    "summary": "Summary statement",
-    "instructions": "What is your substance, whereof are you made, That millions of strange shadows on you tend? Since every one hath, every one, one shade, And you but one, can every shadow lend." ,
-    "image": "weigh.gif",
+    "title": "Prep & Pre-heat",
+    "summary": "Heat water. Pre-wet filter.",
+    "instructions": "1. Boil water in the kettle.\n2. Place a V60 filter in the ceramic V60, and place on top of a coffee cup.\n3. Pour hot water into the V60 to wet the filter. Discard the water that drips into the cup.\n\nPress 'Next' to continue." ,
+    "image": "https://s3.amazonaws.com/coffeecademy/pour-over-prep.gif",
+    "components": {}
+  }, {
+    "title": "Weigh & Grind",
+    "summary": "Weigh coffee and grind.",
+    "instructions": "1. Weigh 10 to 22 grams of coffee. 16 is average.\n 2. Place coffee cup on scale, with V60 on top.\n 3. Pour coffee grounds in the V60, and zero out the scale.\n4. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
+    "image": "https://s3.amazonaws.com/coffeecademy/pour-over-weigh.gif",
     "components": {
       "gramSlider": {
-        "min": 15,
-        "max": 65
+        "min": 10,
+        "max": 22,
+        "gramsPerCup": 15
       }
     }
   }, {
-    "title": "Title 2",
-    "summary": "Summary statement",
-    "instructions": "On Helen's cheek all art of beauty set, And you in Grecian tires are painted new: Speak of the spring, and foison of the year, The one doth shadow of your beauty show, The other as your bounty doth appear; And you in every blessed shape we know.",
-    "image": "bloom.gif",
+    "title": "Bloom",
+    "summary": "Pour ${bloomWater} grams of water over grounds.",
+    "instructions": "1. Press 'Start Timer', then pour over ${bloomWater} grams of water over the coffee.\n2. Start in the center and wet the grounds with water. Once the grounds are wet, wait for 45 seconds. If the grounds are fresh, you may see slight bubbling on top of the grounds occur during this time.",
+    "image": "https://s3.amazonaws.com/coffeecademy/pour-over-bloom.gif",
     "components": {
       "timer": {
-        "start": 60,
-        "stop": 0
+        "seconds": 45
       }
     }
   }, {
-    "title": "Title 3",
-    "summary": "Summary statement",
-    "instructions": "O! never say that I was false of heart, Though absence seemed my flame to qualify, As easy might I from my self depart \n\nAs from my soul which in thy breast doth lie: That is my home of love: if I have ranged, Like him that travels, I return again; Just to the time, not with the time exchanged, So that myself bring water for my stain.",
-    "image": "bloom.gif",
+    "title": "Pour Over",
+    "summary": "Pour over water until ${pourWater} grams.",
+    "instructions": "1. Press 'Start Timer', then continue to pour water over the coffee until you reach ${pourWater} grams of water over the coffee.\n2. Concentrate the pour toward the center of the V60, working your way outwards to about a centimeter from the edge of the slurry. The water stream from the pouring kettle shold be slow enough to fall straight down, not at an angle.\n3. Once the drips stall to every couple of seconds, your brew is finished.",
+    "image": "https://s3.amazonaws.com/coffeecademy/pour-over-pour.gif",
     "components": {
       "timer": {
-        "start": 60,
-        "stop": 0
+        "seconds": 240
       }
     }
   }]

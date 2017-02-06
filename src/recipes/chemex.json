@@ -7,14 +7,14 @@
   "pourMultiplier": 16,
   "steps": [{
     "title": "Prep & preheat",
-    "summary": "Pre-wet filter. Heat water.",
+    "summary": "Heat water. Pre-wet filter.",
     "instructions": "1. Begin boiling water in the kettle.\n2. Place the Chemex Filter in the brewer with multiple folds lined up against the spout.\n3. Rinse the filter with hot water to get a nice even seal all the way around. This preheats the brewer and gets rid of any paper flavor from the filter.\n4. Dump the rinse water and fold the filter toward the spout to reinforce this area.\n\nTap 'Next' to continue." ,
     "image": "",
     "components": {}
   }, {
     "title": "Weigh & grind",
     "summary": "Weigh coffee and grind.",
-    "instructions": "1. Weigh out 15 to 60 grams of coffee.\n2. Pour the coffee beans in the hopper and grind.\n3. Place the Chemex on the scale, pour the coffee in your brewer, and zero out the scale.\n4. Enter the grams of coffee you'll brew to the right, then tap 'Next' to continue.",
+    "instructions": "1. Weigh out 15 to 60 grams of coffee.\n2. Pour the coffee beans in the hopper and grind.\n3. Place the Chemex on the scale, pour the coffee in your brewer, and zero out the scale.\n4. Enter the grams of coffee you'll brew to the right\n\nPress 'Next' to continue.",
     "image": "https://s3.amazonaws.com/coffeecademy/weigh.gif",
     "components": {
       "gramSlider": {
