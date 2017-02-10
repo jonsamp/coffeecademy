@@ -24,11 +24,11 @@ export default class SummaryContainer extends React.Component {
   componentDidMount() {
     const rootRef = firebase.database().ref().child('coffee')
 
-    rootRef.push({
-      grams: this.props.grams,
-      timeStamp: (new Date()).getTime(),
-      method: this.props.recipe.method
-    })
+    // rootRef.push({
+    //   grams: this.props.grams,
+    //   timeStamp: (new Date()).getTime(),
+    //   method: this.props.recipe.method
+    // })
 
     rootRef.on('value', snap => {
 
@@ -56,9 +56,7 @@ export default class SummaryContainer extends React.Component {
   componentWillUnmount() {
 
     // Stop the timeout if this component unmounts
-    this.setState({
-      timeout: null
-    })
+    clearTimeout(this.state.timeout)
   }
 
   calcTotalWeight = (data) => {

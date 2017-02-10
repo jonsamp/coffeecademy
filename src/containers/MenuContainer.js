@@ -44,7 +44,7 @@ export default class MenuContainer extends React.Component {
         <TitleBar />
           <div style={{display: 'flex'}}>
             <div style={{width: '100%', height: '90vh'}}>
-              <MenuTitle section='coffee' />
+              {/* <MenuTitle section='coffee' /> */}
               {this.menuItems('coffee')}
             </div>
           </div>
