@@ -1,6 +1,6 @@
 {
   "method": "Aeropress",
-  "description": "Produces a full-bodied and smooth cup. Brews 1 cup.",
+  "description": "Produces an americano like brew. Brews 1 cup.",
   "icon": "aeropress",
   "grind": 30,
   "bloomMultiplier": 9,
@@ -36,7 +36,7 @@
   }, {
     "title": "Press",
     "summary": "Press coffee over 45 seconds.",
-    "instructions": "1. Press 'Start Timer'.\n2. Insert the plunger and apply pressure to press coffee into cup.\n3. Cease when you hear a long hiss. Then, remove Aeropress and discard filter and coffee grounds. (Caution, cap is hot).",
+    "instructions": "1. Press 'Start Timer'.\n2. Insert the plunger and apply pressure to press coffee into cup.\n3. Cease when you hear a long hiss. Then, remove Aeropress and discard filter and coffee grounds. (Caution, cap is hot).\n4. Top off the cup with extra hot water from the kettle, and enjoy.",
     "image": "https://s3.amazonaws.com/coffeecademy/aeropress-press.gif",
     "components": {
       "timer": {
