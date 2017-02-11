@@ -3,18 +3,18 @@
   "description": "Produces a full-bodied and smooth cup. Brews 1 cup.",
   "icon": "aeropress",
   "grind": 30,
-  "bloomMultiplier": 16,
+  "bloomMultiplier": 9,
   "pourMultiplier": 0,
   "steps": [{
     "title": "Prep & Pre-heat",
     "summary": "Heat water. Pre-wet filter.",
-    "instructions": "1. Bring your water to a boil then let it cool for about 1 minute.\n2. Place circular paper filter in the Aeropress' slotted cap, then attach to the Aeropress body.\n3. Place on top of a coffee cup, and wet the filter. Discard any excess water.\n\nPress 'Next' to continue." ,
+    "instructions": "1. Bring your water to a boil then let it cool for 10 seconds.\n2. Place circular paper filter in the Aeropress' slotted cap, then attach to the Aeropress body.\n3. Place on top of a coffee cup, and wet the filter. Discard any excess water.\n\nPress 'Next' to continue." ,
     "image": "https://s3.amazonaws.com/coffeecademy/aeropress-prep.gif",
     "components": {}
   }, {
     "title": "Weigh & Grind",
     "summary": "Weigh coffee and grind.",
-    "instructions": "1. Weigh 10 to 15 grams of coffee. Grind finely.\n2. Place coffee cup on scale, with Aeropress on top.\n3. Pour grounds into the Aeropress body.\n4. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
+    "instructions": "1. Weigh 10 to 15 grams of coffee.\n2. Grind finely, like an espresso.\n3. Place coffee cup on scale, with Aeropress on top.\n4. Pour grounds into the Aeropress body.\n5. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
     "image": "https://s3.amazonaws.com/coffeecademy/aeropress-weigh.gif",
     "components": {
       "gramSlider": {
@@ -26,21 +26,21 @@
   }, {
     "title": "Bloom",
     "summary": "Pour ${bloomWater} grams of water over grounds.",
-    "instructions": "1. Press 'Start Timer', then pour over ${bloomWater} grams of water over the coffee inside the Aeropress.\n2. After 45 seconds is up, use the plastic stirer to stir the coffee three times.",
+    "instructions": "1. Press 'Start Timer', then pour over ${bloomWater} grams of water over the coffee inside the Aeropress.\n2. After 30 seconds, use the plastic stirer to stir the coffee three times.",
     "image": "https://s3.amazonaws.com/coffeecademy/aeropress-bloom.gif",
     "components": {
       "timer": {
-        "seconds": 45
+        "seconds": 30
       }
     }
   }, {
     "title": "Press",
-    "summary": "Press coffee after 3 minutes.",
-    "instructions": "1. Press 'Start Timer'.\n2. Once the timer has 30 seconds left, insert the plunger and apply pressure to press coffee into cup.\n3. Cease when you hear a long hiss. Then, remove Aeropress and discard filter and coffee grounds. (Caution, cap is hot).",
+    "summary": "Press coffee over 45 seconds.",
+    "instructions": "1. Press 'Start Timer'.\n2. Insert the plunger and apply pressure to press coffee into cup.\n3. Cease when you hear a long hiss. Then, remove Aeropress and discard filter and coffee grounds. (Caution, cap is hot).",
     "image": "https://s3.amazonaws.com/coffeecademy/aeropress-press.gif",
     "components": {
       "timer": {
-        "seconds": 210
+        "seconds": 45
       }
     }
   }]
