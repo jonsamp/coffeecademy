@@ -36,7 +36,8 @@ export default class SummaryContainer extends React.Component {
         this.calcTotalWeight,
         this.calcAverageTime,
         this.numberOfBrews,
-        this.getNumberOfBrew
+        this.getNumberOfBrew,
+        this.calcTotalVolume
       ]
 
       // Generate a random fact
@@ -69,11 +70,24 @@ export default class SummaryContainer extends React.Component {
       }
     })
 
-    return `Added all up, we've brewed a total of ${(totalGrams * 0.00220462).toFixed(2)} pounds of coffee with coffeecademy.`
+    return `Added all up, we've brewed a total of ${(totalGrams * 0.00220462).toFixed(2)} pounds of coffee with coffeecademy. 💪`
+  }
+
+  calcTotalVolume = (data) => {
+    let keys = Object.keys(data)
+    let totalGrams = 0
+
+    keys.forEach((key) => {
+      if (data[key].grams) {
+        totalGrams = totalGrams + (data[key].grams)
+      }
+    })
+
+    return `We've brewed a total of ${(totalGrams * 0.000227020744565).toFixed(2)} gallons of coffee. 🚰`
   }
 
   numberOfBrews = (data) => {
-    return `A total of ${Object.keys(data).length} brews have been made since coffeecademy's inception.`
+    return `A total of ${Object.keys(data).length} brews have been made since coffeecademy's inception. 😸`
   }
 
   getNumberOfBrew = (data) => {
@@ -86,7 +100,7 @@ export default class SummaryContainer extends React.Component {
       }
     })
 
-    return `We've brewed ${brewNumber} ${this.props.recipe.method}s with coffeecademy.`
+    return `We've brewed ${brewNumber} ${this.props.recipe.method}s with coffeecademy. 👌`
 
   }
 
@@ -112,7 +126,7 @@ export default class SummaryContainer extends React.Component {
       time = date.toLocaleTimeString().slice(0,5) + date.toLocaleTimeString().slice(9,11)
     }
 
-    return `The most popular time to make craft coffee is ${time}. 💅🏻`
+    return `The most popular time to make craft coffee is ${time}. ⌚️`
   }
 
   sendMessageToSlack = () => {
