@@ -70,7 +70,7 @@ export default class SummaryContainer extends React.Component {
       }
     })
 
-    return `Added all up, we've brewed a total of ${(totalGrams * 0.00220462).toFixed(2)} pounds of coffee with coffeecademy. 💪`
+    return `Added all up, Bunn Bean has ground a total of ${(totalGrams * 0.00220462).toFixed(2)} pounds of coffee. 💪`
   }
 
   calcTotalVolume = (data) => {
@@ -83,7 +83,7 @@ export default class SummaryContainer extends React.Component {
       }
     })
 
-    return `We've brewed a total of ${(totalGrams * 0.000227020744565).toFixed(2)} gallons of coffee. 🚰`
+    return `We've brewed a total of ${((totalGrams * 16) * 0.000227020744565).toFixed(2)} gallons of coffee. 🚰`
   }
 
   numberOfBrews = (data) => {
