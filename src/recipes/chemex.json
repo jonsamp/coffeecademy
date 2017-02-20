@@ -14,12 +14,12 @@
   }, {
     "title": "Weigh & grind",
     "summary": "Weigh coffee and grind.",
-    "instructions": "1. Weigh out 15 to 60 grams of coffee.\n2. Pour the coffee beans in the hopper and grind.\n3. Place the Chemex on the scale, pour the coffee in your brewer, then zero out the scale.\n4. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue.",
+    "instructions": "1. Weigh out 25 to 65 grams of coffee.\n2. Pour the coffee beans in the hopper and grind.\n3. Place the Chemex on the scale, pour the coffee in your brewer, then zero out the scale.\n4. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue.",
     "image": "https://s3.amazonaws.com/coffeecademy/weigh.gif",
     "components": {
       "gramSlider": {
-        "min": 15,
-        "max": 60,
+        "min": 25,
+        "max": 65,
         "gramsPerCup": 15
       }
     }

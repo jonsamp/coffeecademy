@@ -14,13 +14,13 @@
   }, {
     "title": "Weigh & Grind",
     "summary": "Weigh coffee and grind.",
-    "instructions": "1. Weigh 10 to 15 grams of coffee.\n2. Grind finely, like an espresso.\n3. Place coffee cup on scale, with Aeropress on top.\n4. Pour grounds into the Aeropress body.\n5. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
+    "instructions": "1. Weigh 10 to 20 grams of coffee.\n2. Grind finely, like an espresso.\n3. Place coffee cup on scale, with Aeropress on top.\n4. Pour grounds into the Aeropress body.\n5. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
     "image": "https://s3.amazonaws.com/coffeecademy/aeropress-weigh.gif",
     "components": {
       "gramSlider": {
         "min": 10,
-        "max": 15,
-        "gramsPerCup": 15
+        "max": 20,
+        "gramsPerCup": 20
       }
     }
   }, {
