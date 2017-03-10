@@ -1,5 +1,6 @@
 import React from 'react'
 import Summary from '../components/summary/Summary'
+import factsList from '../data/facts'
 
 import firebase from 'firebase'
 
@@ -32,17 +33,20 @@ export default class SummaryContainer extends React.Component {
 
     rootRef.on('value', snap => {
 
-      let facts = [
-        this.calcTotalWeight,
-        this.calcAverageTime,
-        this.numberOfBrews,
-        this.getNumberOfBrew,
-        this.calcTotalVolume
-      ]
+      // let facts = [
+      //   this.calcTotalWeight,
+      //   this.calcAverageTime,
+      //   this.numberOfBrews,
+      //   this.getNumberOfBrew,
+      //   this.calcTotalVolume
+      // ]
+
+      const catEmojis = ['😺', '😸', '😹', '😻', '😼', '🙀', '🐱', '🐈']
+      const getRandomNumber = arr => Math.floor(Math.random() * arr.length)
 
       // Generate a random fact
-      let randomNumber = Math.floor(Math.random() * facts.length)
-      let fact = facts[randomNumber](snap.val())
+      // let fact = factsList[randomNumber](snap.val())
+      let fact = `${factsList[getRandomNumber(factsList)]} ${catEmojis[getRandomNumber(catEmojis)]}`
       this.setState({
         fact: fact
       })
@@ -60,74 +64,74 @@ export default class SummaryContainer extends React.Component {
     clearTimeout(this.state.timeout)
   }
 
-  calcTotalWeight = (data) => {
-    let keys = Object.keys(data)
-    let totalGrams = 0
+  // calcTotalWeight = (data) => {
+  //   let keys = Object.keys(data)
+  //   let totalGrams = 0
+  //
+  //   keys.forEach((key) => {
+  //     if (data[key].grams) {
+  //       totalGrams = totalGrams + (data[key].grams)
+  //     }
+  //   })
+  //
+  //   return `Added all up, Bunn Bean has ground a total of ${(totalGrams * 0.00220462).toFixed(2)} pounds of coffee. 💪`
+  // }
 
-    keys.forEach((key) => {
-      if (data[key].grams) {
-        totalGrams = totalGrams + (data[key].grams)
-      }
-    })
+  // calcTotalVolume = (data) => {
+  //   let keys = Object.keys(data)
+  //   let totalGrams = 0
+  //
+  //   keys.forEach((key) => {
+  //     if (data[key].grams) {
+  //       totalGrams = totalGrams + (data[key].grams)
+  //     }
+  //   })
+  //
+  //   return `We've brewed a total of ${((totalGrams * 16) * 0.000227020744565).toFixed(2)} gallons of coffee. 🚰`
+  // }
 
-    return `Added all up, Bunn Bean has ground a total of ${(totalGrams * 0.00220462).toFixed(2)} pounds of coffee. 💪`
-  }
+  // numberOfBrews = (data) => {
+  //   return `A total of ${Object.keys(data).length} brews have been made since coffeecademy's inception. 😸`
+  // }
 
-  calcTotalVolume = (data) => {
-    let keys = Object.keys(data)
-    let totalGrams = 0
+  // getNumberOfBrew = (data) => {
+  //   let keys = Object.keys(data)
+  //   let brewNumber = 0
+  //
+  //   keys.forEach((key) => {
+  //     if (data[key].method === this.props.recipe.method) {
+  //       brewNumber++
+  //     }
+  //   })
+  //
+  //   return `We've brewed ${brewNumber} ${this.props.recipe.method}s with coffeecademy. 👌`
+  //
+  // }
 
-    keys.forEach((key) => {
-      if (data[key].grams) {
-        totalGrams = totalGrams + (data[key].grams)
-      }
-    })
-
-    return `We've brewed a total of ${((totalGrams * 16) * 0.000227020744565).toFixed(2)} gallons of coffee. 🚰`
-  }
-
-  numberOfBrews = (data) => {
-    return `A total of ${Object.keys(data).length} brews have been made since coffeecademy's inception. 😸`
-  }
-
-  getNumberOfBrew = (data) => {
-    let keys = Object.keys(data)
-    let brewNumber = 0
-
-    keys.forEach((key) => {
-      if (data[key].method === this.props.recipe.method) {
-        brewNumber++
-      }
-    })
-
-    return `We've brewed ${brewNumber} ${this.props.recipe.method}s with coffeecademy. 👌`
-
-  }
-
-  calcAverageTime = (data) => {
-    let keys = Object.keys(data)
-    let times = []
-    keys.forEach((key) => {
-      times.push(data[key].timeStamp)
-    })
-
-    let sortedTimes = times.sort((a, b) => {
-      return a - b
-    })
-
-    let medianTime = sortedTimes[Math.round(sortedTimes.length / 2)]
-    let date = new Date(Math.floor(medianTime))
-
-    let time
-
-    if (/\:/.exec(date.toLocaleTimeString().slice(0,2))) {
-      time = date.toLocaleTimeString().slice(0,4) + date.toLocaleTimeString().slice(8,10)
-    } else {
-      time = date.toLocaleTimeString().slice(0,5) + date.toLocaleTimeString().slice(9,11)
-    }
-
-    return `The most popular time to make craft coffee is ${time}. ⌚️`
-  }
+  // calcAverageTime = (data) => {
+  //   let keys = Object.keys(data)
+  //   let times = []
+  //   keys.forEach((key) => {
+  //     times.push(data[key].timeStamp)
+  //   })
+  //
+  //   let sortedTimes = times.sort((a, b) => {
+  //     return a - b
+  //   })
+  //
+  //   let medianTime = sortedTimes[Math.round(sortedTimes.length / 2)]
+  //   let date = new Date(Math.floor(medianTime))
+  //
+  //   let time
+  //
+  //   if (/\:/.exec(date.toLocaleTimeString().slice(0,2))) {
+  //     time = date.toLocaleTimeString().slice(0,4) + date.toLocaleTimeString().slice(8,10)
+  //   } else {
+  //     time = date.toLocaleTimeString().slice(0,5) + date.toLocaleTimeString().slice(9,11)
+  //   }
+  //
+  //   return `The most popular time to make craft coffee is ${time}. ⌚️`
+  // }
 
   sendMessageToSlack = () => {
     let payload = {
