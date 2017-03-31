@@ -1,13 +1,8 @@
-h1,
-h3,
-p {
-
-}
-
 .instructionArea {
   padding: 0 3rem;
   overflow: scroll;
   height: 60vh;
+  animation: fade-in 0.5s linear;
 }
 
 h1 {
@@ -37,11 +32,13 @@ p ul {
 }
 
 .imageWrapper {
-  height: 35vh
+  height: 33vh;
+  display: flex;
 }
 
 .image {
   width: 100%;
+  animation: fade-in 0.5s linear;
 }
 
 .wrapper {
@@ -52,6 +49,8 @@ p ul {
   overflow: hidden;
   width: 100%;
   background-color: #F0F0F0;
+  transition: 0.5s;
+  transform: translateX(0);
 }
 
 .nav {
@@ -119,6 +118,7 @@ p span {
   justify-content: center;
   align-items: center;
   color: #F0F0F0;
+  animation: fade-in 0.5s linear;
 }
 
 .gramSlider h1 {
@@ -152,6 +152,7 @@ p span {
 .clockComponent {
   display: flex;
   flex-direction: column;
+  animation: fade-in 0.5s linear;
 }
 
 .startButton {
@@ -177,4 +178,8 @@ p span {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
+}
+@-webkit-keyframes fade-in {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
 }

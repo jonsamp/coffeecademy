@@ -13,8 +13,8 @@ const Step = ({
   let style = {}
   if (emptyComponent) {
     style = {
-      margin: 'auto',
-      maxWidth: '33rem'
+      transform: 'translateX(50%)',
+      maxWidth: '32rem'
     }
   }
 

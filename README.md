@@ -1,4 +1,4 @@
-# (coffee|tea)cademy
+# [caffeine]cademy
 
 Learn how to make craft coffee and tea.
 

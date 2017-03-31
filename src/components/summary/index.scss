@@ -7,6 +7,7 @@
   height: 100vh;
   max-width: 75%;
   margin: auto;
+  animation: fade-in 0.5s linear;
 
   h1 {
     font-size: 2.5rem;
@@ -66,4 +67,9 @@
   img {
     width: 10rem;
   }
+}
+
+@-webkit-keyframes fade-in {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
 }
