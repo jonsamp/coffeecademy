@@ -145,6 +145,7 @@ p span {
   display: flex;
   margin: auto;
   position: relative;
+  left: 7vw;
   z-index: 0;
 }
 
@@ -173,10 +174,12 @@ p span {
   justify-content: center;
 
   h1 {
-    position: absolute;
+    position: relative;
+    left: -18vw;
     z-index: 1;
     margin-top: 0;
     padding-top: 1rem;
+    line-height: 0;
   }
 }
 
