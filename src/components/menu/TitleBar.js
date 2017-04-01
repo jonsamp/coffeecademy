@@ -12,9 +12,13 @@ const styles = {
 }
 
 const TitleBar = () => {
+  const reload = () => {
+    window.location.reload(true)
+  }
+
   return (
     <div style={styles}>
-      <img src={logo} alt='Logo' />
+      <img src={logo} alt='Logo' onClick={reload} />
     </div>
   )
 }

@@ -78,7 +78,6 @@
     "react-dom": "^15.0.0",
     "react-fastclick": "^3.0.1",
     "react-firebase": "^2.0.2",
-    "react-progress-label": "^1.2.1",
-    "react-sound": "^0.5.2"
+    "react-progress-label": "^1.2.1"
   }
 }

@@ -1,7 +1,6 @@
 .instructionArea {
   padding: 0 3rem;
   overflow: scroll;
-  height: 60vh;
   animation: fade-in 0.5s linear;
 }
 
@@ -51,6 +50,8 @@ p ul {
   background-color: #F0F0F0;
   transition: 0.5s;
   transform: translateX(0);
+  position: relative;
+  z-index: 1;
 }
 
 .nav {
@@ -60,7 +61,6 @@ p ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   width: 100%;
 }
 
@@ -119,6 +119,8 @@ p span {
   align-items: center;
   color: #F0F0F0;
   animation: fade-in 0.5s linear;
+  position: relative;
+  z-index: 0;
 }
 
 .gramSlider h1 {
@@ -137,22 +139,45 @@ p span {
   margin-bottom: 4rem;
 }
 
+.circle {
+  width: 30vw;
+  max-width: 20rem;
+  display: flex;
+  margin: auto;
+  position: relative;
+  z-index: 0;
+}
+
 .clock {
   color: white;
   font-weight: lighter;
-  font-size: 5rem;
-  line-height: 6rem;
-  margin-bottom: 0;
-  margin-top: -42%;
-  padding: 0;
+  font-size: 7vw;
   text-align: center;
   font-family: 'Lato', sans-serif;
+
+  @media (min-width: 1100px) {
+    font-size: 5rem;
+  }
 }
 
 .clockComponent {
   display: flex;
   flex-direction: column;
   animation: fade-in 0.5s linear;
+  width: 100%;
+}
+
+.circularTime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    position: absolute;
+    z-index: 1;
+    margin-top: 0;
+    padding-top: 1rem;
+  }
 }
 
 .startButton {
@@ -162,10 +187,8 @@ p span {
   color: white;
   padding: 1.25em 2.25em;
   width: 8em;
-  margin: auto;
+  margin: 3rem auto;
   text-align: center;
-  position: relative;
-  top: 12rem;
   animation: pulse 2s infinite;
   border-radius: 6px;
 }

@@ -14,7 +14,7 @@ const Step = ({
   if (emptyComponent) {
     style = {
       transform: 'translateX(50%)',
-      maxWidth: '32rem'
+      maxWidth: '50vw'
     }
   }
 
