@@ -2,6 +2,7 @@ echo "=== BUILDING DIST ==="
 npm run dist
 
 echo "=== PUSHING TO GIT ==="
+git add .
 git commit -am "Deploying"
 git push
 
