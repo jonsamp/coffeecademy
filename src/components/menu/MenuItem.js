@@ -13,16 +13,16 @@ const MenuItem = ({
  }) => {
    let style;
 
-   if (
-     brewMethod === 'Percolator'
-   ) {
-     style = {
-       opacity: '0.5',
-       cursor: 'not-allowed'
-     }
-
-     value = '#'
-   }
+  //  if (
+  //    brewMethod === 'Percolator'
+  //  ) {
+  //    style = {
+  //      opacity: '0.5',
+  //      cursor: 'not-allowed'
+  //    }
+   //
+  //    value = '#'
+  //  }
 
   return (
     <div className={[styles.item, styles[type]].join(' ')} onClick={onClick} value={value} key={index} icon={icon} style={style}>

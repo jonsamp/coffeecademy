@@ -26,7 +26,7 @@ const Summary = ({
 
   let slackButton
 
-  if (grams > 30) {
+  if (grams > 30 || recipe.icon === 'percolator') {
     slackButton = <div className={styles.slackButton} onClick={sendMessageToSlack}>
       <span><img src={slackMark} /> Slack #caffeinators</span>
     </div>
@@ -43,7 +43,7 @@ const Summary = ({
       <div className={styles.summary}>
         <img src={brewIcons[recipe.icon]} />
         <h1>{`Enjoy the ${recipe.method}!`}</h1>
-        <p>{ grams ? `You made ${grams} delicious grams of craft coffee.` : `You may have made some coffee, but you didn't input any grams.`}</p>
+        <p>{ grams ? `You made ${grams} delicious grams of craft coffee.` : `You made some coffee!`}</p>
         <p>{fact ? `Fact: ${fact}` : ``}</p>
 
       </div>
