@@ -10,7 +10,7 @@
     "title": "Weigh & grind",
     "summary": "Weigh coffee and grind.",
     "instructions": "1. Weigh out 25 to 65 grams of coffee.\n2. Grind it on a medium setting.\n3. Set coffee grounds aside.\n\nPress 'Next' to continue.",
-    "image": "https://s3.amazonaws.com/coffeecademy/weigh.gif",
+    "image": "https://s3.amazonaws.com/coffeecademy/ice-chemex-weigh.gif",
     "components": {
       "gramSlider": {
         "min": 25,
