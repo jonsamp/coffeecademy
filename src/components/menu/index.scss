@@ -1,4 +1,4 @@
-
+@import 'src/components/global/colors';
 
 /* menu title */
 .coffee,
@@ -8,18 +8,18 @@
   align-items: center;
   height: 16vh;
   padding: 0 2rem;
-  border-bottom: 1px solid #F0F0F0;
+  border-bottom: 1px solid $gray1;
   text-transform: uppercase;
   letter-spacing: 0.075rem;
 }
 
 .coffee {
-  background-color: #2B2B2B;
-  color: #F0F0F0;
+  background-color: $gray2;
+  color: $gray1;
 }
 
 .tea {
-  background-color: #F0F0F0;
+  background-color: $gray1;
 }
 
 .image {
@@ -31,9 +31,7 @@
 .item.coffee,
 .item.tea {
   font-size: 1.25rem;
-  padding: 0 2rem;
-  margin-left: 2rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,11 +42,11 @@
 }
 
 .item.coffee {
-  background-color: #2B2B2B;
+  background-color: $gray2;
 }
 
 .item.tea {
-  background-color: #f0f0f0;
+  background-color: $gray1;
 }
 
 .methodTitle {

@@ -2,8 +2,14 @@ html,
 body {
   font-family: 'Lato', sans-serif;
   line-height: 1.5rem;
-  background-color: #2B2B2B;
+  background-color: black;
   color: #2B2B2B;
+}
+
+#app {
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #2B2B2B;
 }
 
 h1 {
@@ -80,6 +86,7 @@ code {
       -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
   }
 }
+
 @keyframes pulse {
   0% {
     -moz-box-shadow: 0 0 0 0 rgba(237,93,42, 0.4);

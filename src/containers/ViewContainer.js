@@ -47,12 +47,12 @@ export default class ViewContainer extends React.Component {
     })
   }
 
-  getSelection = (el) => {
+  getSelection = (e) => {
 
     // Gets value from menu button
     // Separates coffee or tea, then finds the brew method
-    let beverage = el.target.attributes.value.nodeValue.split(' ')[0]
-    let method = el.target.attributes.value.nodeValue.split(' ')[1]
+    let beverage = e.target.attributes.value.nodeValue.split(' ')[0]
+    let method = e.target.attributes.value.nodeValue.split(' ')[1]
     let recipe = this.state.recipes[beverage][method]
 
     // Sets state to selected brew method
@@ -64,15 +64,11 @@ export default class ViewContainer extends React.Component {
     this.toggleMenu()
   }
 
-  currentView() {
+  render() {
     if (this.state.menuVisible) {
       return <MenuContainer getSelection={this.getSelection} recipes={this.state.recipes} />
     } else {
       return <InstructionsContainer currentRecipe={this.state.currentRecipe} toggleMenu={this.toggleMenu} toggleSummary={this.toggleSummary} />
     }
-  }
-
-  render() {
-    return this.currentView()
   }
 }

@@ -1,5 +1,7 @@
+@import 'src/components/global/colors';
+
 .summaryWrapper {
-  color: #F0F0F0;
+  color: $gray1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +33,7 @@
   }
 
   .menu {
-    background-color: #FF5100;
+    background-color: $hue1;
     flex: 1;
     padding: 1rem 2rem;
     border-radius: 6px;
@@ -42,8 +44,8 @@
 
   .slackButton {
     flex: 2;
-    background-color: #F0F0F0;
-    color: #2B2B2B;
+    background-color: $gray1;
+    color: $gray2;
     padding: 1rem 2rem;
     border-radius: 6px;
     text-transform: uppercase;
