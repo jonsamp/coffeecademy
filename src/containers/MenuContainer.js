@@ -8,6 +8,7 @@ import chemex from '../images/chemex.svg'
 import aeropress from '../images/aeropress.svg'
 import pourOver from '../images/pourOver.svg'
 import percolator from '../images/percolator.svg'
+import icedChemex from '../images/iced-chemex.svg'
 
 export default class MenuContainer extends React.Component {
 
@@ -15,7 +16,8 @@ export default class MenuContainer extends React.Component {
     chemex,
     aeropress,
     pourOver,
-    percolator
+    percolator,
+    icedChemex
   }
 
   menuItems(type) {

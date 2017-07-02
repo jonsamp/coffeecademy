@@ -9,6 +9,7 @@ import chemex from '../recipes/chemex.json'
 import pourOver from '../recipes/pourOver.json'
 import aeropress from '../recipes/aeropress.json'
 import percolator from '../recipes/percolator.json'
+import icedChemex from '../recipes/icedChemex.json'
 
 // Tea recipes
 // import black from '../recipes/black.json'
@@ -25,6 +26,7 @@ export default class ViewContainer extends React.Component {
     recipes: {
       coffee: {
         chemex: chemex,
+        icedChemex: icedChemex,
         pourOver: pourOver,
         aeropress: aeropress,
         percolator: percolator

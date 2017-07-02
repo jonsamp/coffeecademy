@@ -13,6 +13,7 @@ export default class InstructionsContainer extends React.Component {
     grams: null,
     bloomWater: null,
     pourWater: null,
+    iceWater: null,
     summaryVisible: false
   }
 
@@ -23,20 +24,25 @@ export default class InstructionsContainer extends React.Component {
 
 
   initializeGramSlider() {
-    if (this.state.currentStep.components.gramSlider) {
+    const { currentRecipe } = this.props
+    const { gramSlider } = this.state.currentStep.components
+    if (gramSlider) {
       this.setState({
-        grams: this.state.currentStep.components.gramSlider.min,
-        bloomWater: this.state.currentStep.components.gramSlider.min * this.props.currentRecipe.bloomMultiplier,
-        pourWater: this.state.currentStep.components.gramSlider.min * this.props.currentRecipe.pourMultiplier
+        grams: gramSlider.min,
+        bloomWater: gramSlider.min * currentRecipe.bloomMultiplier,
+        pourWater: ((gramSlider.min * currentRecipe.pourMultiplier) - (gramSlider.min * currentRecipe.bloomMultiplier)),
+        iceWater: gramSlider.min * currentRecipe.iceWaterMultiplier
       })
     }
   }
 
   setGrams = (v) => {
+    const { bloomMultiplier, pourMultiplier, iceWaterMultiplier } = this.props.currentRecipe
     this.setState({
       grams: v,
-      bloomWater: v * this.props.currentRecipe.bloomMultiplier,
-      pourWater: v * this.props.currentRecipe.pourMultiplier
+      bloomWater: v * bloomMultiplier,
+      pourWater: ((v * pourMultiplier) - (v * bloomMultiplier)),
+      iceWater: v * iceWaterMultiplier
     })
   }
 
@@ -94,7 +100,7 @@ export default class InstructionsContainer extends React.Component {
 
   insertGrams = (match) => {
     const word = match.slice(2, match.length - 1)
-    return this.state[word]
+    return Math.round(this.state[word])
   }
 
   isEmptyObject(obj) {
@@ -111,7 +117,6 @@ export default class InstructionsContainer extends React.Component {
   displayStep() {
     // Only create the elements when there is a recipe
     if (this.props.currentRecipe && this.state.stepIndex <= this.state.lastStep) {
-      // let currentStep = this.props.currentRecipe.steps[this.state.stepIndex]
       let interpolatedSummary = this.interpolateGrams(this.state.currentStep.summary)
       let interpolatedInstruction = this.interpolateGrams(this.state.currentStep.instructions)
       let component;
@@ -122,8 +127,8 @@ export default class InstructionsContainer extends React.Component {
 
       return (
         <div style={{ display: 'flex', width: '100%'}}>
-        <Step title={this.state.currentStep.title} summary={interpolatedSummary} instructions={interpolatedInstruction} image={this.state.currentStep.image} emptyComponent={emptyComponent}/>
-          {component}
+          <Step title={this.state.currentStep.title} summary={interpolatedSummary} instructions={interpolatedInstruction} image={this.state.currentStep.image} emptyComponent={emptyComponent}/>
+            {component}
         </div>
       )
     }

@@ -1,0 +1,48 @@
+{
+  "method": "Iced Chemex",
+  "description": "A sweet and cool brew. Brews 1-4 cups.",
+  "icon": "iced-chemex",
+  "grind": 30,
+  "bloomMultiplier": 2,
+  "pourMultiplier": 10.666,
+  "iceWaterMultiplier": 5.333,
+  "steps": [{
+    "title": "Weigh & grind",
+    "summary": "Weigh coffee and grind.",
+    "instructions": "1. Weigh out 25 to 65 grams of coffee.\n2. Grind it on a medium setting.\n3. Set coffee grounds aside.\n\nPress 'Next' to continue.",
+    "image": "https://s3.amazonaws.com/coffeecademy/weigh.gif",
+    "components": {
+      "gramSlider": {
+        "min": 25,
+        "max": 65,
+        "gramsPerCup": 15
+      }
+    }
+  }, {
+    "title": "Add ice",
+    "summary": "Add ${iceWater} grams of ice to the Chemex.",
+    "instructions": "1. Add ${iceWater} grams of ice cubes to the carafe of the Chemex.\n2. Place a filter in the Chemex, wetting it with a small amount of water.\n3. Add coffee grounds to the Chemex.\n\nPress 'Next' to continue." ,
+    "image": "https://s3.amazonaws.com/coffeecademy/ice-chemex-add-ice.gif",
+    "components": {}
+  }, {
+    "title": "Bloom",
+    "summary": "Pour ${bloomWater} grams of water over grounds.",
+    "instructions": "1. Press 'Start Timer', then pour over ${bloomWater} grams of water over the coffee.\n2. Start in the center and wet the grounds with water. Once the grounds are wet, wait for 45 seconds. If the grounds are fresh, you may see slight bubbling on top of the grounds occur during this time.",
+    "image": "https://s3.amazonaws.com/coffeecademy/ice-chemex-bloom.gif",
+    "components": {
+      "timer": {
+        "seconds": 45
+      }
+    }
+  }, {
+    "title": "Pour Over",
+    "summary": "Pour over water until ${pourWater} grams.",
+    "instructions": "1. Press 'Start Timer', then continue to pour water over the coffee until you reach ${pourWater} grams of water over the coffee.\n2. As you pour, most of the ice in the Chemex will melt.\n3. Once the drips stall to every couple of seconds, your brew is finished.\n4. Serve in a glass jar with a few ice cubes.",
+    "image": "https://s3.amazonaws.com/coffeecademy/ice-chemex-pour.gif",
+    "components": {
+      "timer": {
+        "seconds": 240
+      }
+    }
+  }]
+}
