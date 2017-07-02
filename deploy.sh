@@ -1,5 +1,5 @@
 echo "=== BUILDING DIST ==="
-npm run dist
+yarn dist
 
 echo "=== PUSHING TO GIT ==="
 git add .
