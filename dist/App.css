@@ -10,6 +10,7 @@ body {
   border-radius: 1rem;
   overflow: hidden;
   background-color: #2B2B2B;
+  height: 100vh;
 }
 
 h1 {
@@ -21,6 +22,11 @@ code {
   background-color: #d6d6d6;
   border-radius: 0.25rem;
   padding: 0.25rem;
+}
+
+.displayHorizontal {
+  display: flex;
+  width: 100%;
 }
 
 .rc-slider {
