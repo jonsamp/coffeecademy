@@ -1,6 +1,7 @@
 .menu {
   display: flex;
   flex-wrap: wrap;
-  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   background-color: #2B2B2B;
 }
