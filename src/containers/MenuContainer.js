@@ -6,6 +6,7 @@ import aeropress from '../images/aeropress.svg'
 import pourOver from '../images/pourOver.svg'
 import percolator from '../images/percolator.svg'
 import icedChemex from '../images/iced-chemex.svg'
+import s from './index.scss'
 
 class MenuContainer extends Component {
 
@@ -26,7 +27,14 @@ class MenuContainer extends Component {
     // The value attr gets passed up to ViewContainer, used in getSelection
     return Object.keys(beverage).map((recipe, index) => {
       return (
-        <MenuItem onClick={this.props.getSelection} value={`${type} ${recipe}`} key={index} brewMethod={beverage[recipe].method} description={beverage[recipe].description} type={type} icon={this.brewIcons[recipe]} />
+        <MenuItem
+          onClick={this.props.getSelection}
+          value={`${type} ${recipe}`}
+          key={index}
+          brewMethod={beverage[recipe].method}
+          description={beverage[recipe].description}
+          cardIcon={beverage[recipe].cardIcon}
+        />
       )
     })
   }
@@ -35,7 +43,9 @@ class MenuContainer extends Component {
     return (
       <div>
         <TitleBar />
-        {this.menuItems('coffee')}
+        <div className={s.menu}>
+          {this.menuItems('coffee')}
+        </div>
       </div>
     )
   }

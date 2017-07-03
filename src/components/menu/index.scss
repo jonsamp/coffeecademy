@@ -25,39 +25,3 @@
 .image {
   margin-right: 1rem;
 }
-
-/* menu item */
-
-.item.coffee,
-.item.tea {
-  font-size: 1.25rem;
-  padding-left: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #979797;
-  cursor: pointer;
-  text-transform: none;
-  letter-spacing: 0;
-}
-
-.item.coffee {
-  background-color: $gray2;
-}
-
-.item.tea {
-  background-color: $gray1;
-}
-
-.methodTitle {
-  font-size: 1.35rem;
-  padding: 0;
-  letter-spacing: 0.05rem;
-}
-
-.description {
-  padding: 0;
-  margin: 0.5rem 0;
-  font-weight: lighter;
-  font-size: 1rem;
-}

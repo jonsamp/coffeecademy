@@ -2,6 +2,7 @@
   "method": "Chemex",
   "description": "Eliminates oils and sediment for a clean cup. Brews 1-4 cups.",
   "icon": "chemex",
+  "cardIcon": "https://s3.amazonaws.com/coffeecademy/chemex-card.jpg",
   "grind": 30,
   "bloomMultiplier": 2,
   "pourMultiplier": 16,

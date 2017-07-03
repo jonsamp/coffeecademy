@@ -2,6 +2,7 @@
   "method": "Pour Over",
   "description": "Results in a clear brew with nuanced, well-rounded flavor. Brews 1 cup.",
   "icon": "pourOver",
+  "cardIcon": "https://s3.amazonaws.com/coffeecademy/pour-over-card.jpg",
   "grind": 30,
   "bloomMultiplier": 2,
   "pourMultiplier": 16,

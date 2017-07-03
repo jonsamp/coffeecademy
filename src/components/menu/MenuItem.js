@@ -1,26 +1,22 @@
 import React from 'react'
-import styles from './index.scss'
+import s from './MenuItem.scss'
 import rightArrow from '../../images/right-arrow.svg'
 
 const MenuItem = ({
   onClick,
   value,
-  index,
   brewMethod,
   description,
-  type,
-  icon
+  cardIcon
  }) => (
-  <div onClick={onClick} name={value}>
-    <div className={[styles.item, styles[type]].join(' ')} key={index} icon={icon}>
-      <div style={{display: 'flex', alignItems: 'center'}}>
-        <img src={icon} style={{width: '3.5rem', marginRight: '1.5rem'}}/>
-        <div>
-          <span className={styles.methodTitle}>{brewMethod}</span>
-          <p className={styles.description}>{description}</p>
-        </div>
-      </div>
-      <img src={rightArrow}/>
+  <div onClick={onClick} name={value} className={s.menuItem}>
+    <div className={s.itemMedia} style={{
+      backgroundImage: `url(${cardIcon})`
+    }}>
+    </div>
+    <div className={s.itemBody}>
+      <h1 className={s.title}>{brewMethod}</h1>
+      <p className={s.description}>{description}</p>
     </div>
   </div>
 )

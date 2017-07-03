@@ -2,6 +2,7 @@
   "method": "Aeropress",
   "description": "Produces an americano like brew. Brews 1 cup.",
   "icon": "aeropress",
+  "cardIcon": "https://s3.amazonaws.com/coffeecademy/aeropress-card.jpg",
   "grind": 30,
   "bloomMultiplier": 9,
   "pourMultiplier": 0,

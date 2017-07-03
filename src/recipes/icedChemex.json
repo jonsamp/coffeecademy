@@ -2,6 +2,7 @@
   "method": "Iced Chemex",
   "description": "A sweet and cool brew. Brews 1-4 cups.",
   "icon": "iced-chemex",
+  "cardIcon": "https://s3.amazonaws.com/coffeecademy/ice-chemex-card.jpg",
   "grind": 30,
   "bloomMultiplier": 2,
   "pourMultiplier": 10.666,
