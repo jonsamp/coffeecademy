@@ -14,12 +14,12 @@
   }, {
     "title": "Weigh & Grind",
     "summary": "Weigh coffee and grind.",
-    "instructions": "1. Weigh 10 to 22 grams of coffee. 16 is average.\n2. Place coffee cup on scale, with V60 on top.\n3. Pour coffee grounds in the V60, and zero out the scale.\n4. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
+    "instructions": "1. Weigh 10 to 25 grams of coffee. 16 is average.\n2. Place coffee cup on scale, with V60 on top.\n3. Pour coffee grounds in the V60, and zero out the scale.\n4. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
     "image": "https://s3.amazonaws.com/coffeecademy/pour-over-weigh.gif",
     "components": {
       "gramSlider": {
         "min": 10,
-        "max": 22,
+        "max": 25,
         "gramsPerCup": 15
       }
     }

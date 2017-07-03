@@ -13,7 +13,7 @@
     "image": "https://s3.amazonaws.com/coffeecademy/ice-chemex-weigh.gif",
     "components": {
       "gramSlider": {
-        "min": 25,
+        "min": 15,
         "max": 65,
         "gramsPerCup": 15
       }

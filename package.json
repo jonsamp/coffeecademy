@@ -69,6 +69,7 @@
     "core-js": "^2.0.0",
     "firebase": "^3.6.7",
     "firebase-3-react": "^1.0.24",
+    "lodash": "^4.17.4",
     "marked": "^0.3.6",
     "normalize.css": "^4.0.0",
     "rc-progress": "^2.0.6",

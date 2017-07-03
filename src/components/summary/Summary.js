@@ -43,8 +43,8 @@ const Summary = ({
       <div className={styles.summary}>
         <img src={brewIcons[recipe.icon]} />
         <h1>{`Enjoy the ${recipe.method}!`}</h1>
-        <p>{ grams ? `You made ${grams} delicious grams of craft coffee.` : `You made some coffee!`}</p>
-        <p>{fact ? `Fact: ${fact}` : ``}</p>
+        <p>{ grams ? `You made ${grams} delicious grams of craft coffee.` : 'You made some coffee!'}</p>
+        <p>{fact ? `Fact: ${fact}` : ''}</p>
 
       </div>
       <div className={styles.buttons}>

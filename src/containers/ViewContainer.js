@@ -49,18 +49,21 @@ export default class ViewContainer extends React.Component {
     })
   }
 
+  getMenuItemParentElement = (e) => {
+    return e.getAttribute('name') ? e.getAttribute('name') : this.getMenuItemParentElement(e.parentNode)
+  }
+
   getSelection = (e) => {
+    const menuItem = this.getMenuItemParentElement(e.target)
 
     // Gets value from menu button
     // Separates coffee or tea, then finds the brew method
-    let beverage = e.target.attributes.value.nodeValue.split(' ')[0]
-    let method = e.target.attributes.value.nodeValue.split(' ')[1]
-    let recipe = this.state.recipes[beverage][method]
+    let beverage = menuItem.split(' ')[0]
+    let method = menuItem.split(' ')[1]
+    let currentRecipe = this.state.recipes[beverage][method]
 
     // Sets state to selected brew method
-    this.setState({
-      currentRecipe: recipe
-    })
+    this.setState({ currentRecipe })
 
     // Toggle to the InstructionsContainer
     this.toggleMenu()

@@ -1,16 +1,13 @@
-import React from 'react'
-
+import React, { Component } from 'react'
 import TitleBar from '../components/menu/TitleBar'
-import MenuTitle from '../components/menu/MenuTitle'
 import MenuItem from '../components/menu/MenuItem'
-
 import chemex from '../images/chemex.svg'
 import aeropress from '../images/aeropress.svg'
 import pourOver from '../images/pourOver.svg'
 import percolator from '../images/percolator.svg'
 import icedChemex from '../images/iced-chemex.svg'
 
-export default class MenuContainer extends React.Component {
+class MenuContainer extends Component {
 
   brewIcons = {
     chemex,
@@ -34,23 +31,14 @@ export default class MenuContainer extends React.Component {
     })
   }
 
-  styles = {
-    width: '100%',
-    margin: '1rem 0',
-    height: '4rem'
-  }
-
   render() {
     return (
       <div>
         <TitleBar />
-          <div style={{display: 'flex'}}>
-            <div style={{width: '100%', height: '90vh'}}>
-              {/* <MenuTitle section='coffee' /> */}
-              {this.menuItems('coffee')}
-            </div>
-          </div>
+        {this.menuItems('coffee')}
       </div>
     )
   }
 }
+
+export default MenuContainer

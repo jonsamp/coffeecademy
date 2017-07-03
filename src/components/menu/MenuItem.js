@@ -10,32 +10,19 @@ const MenuItem = ({
   description,
   type,
   icon
- }) => {
-   let style;
-
-  //  if (
-  //    brewMethod === 'Percolator'
-  //  ) {
-  //    style = {
-  //      opacity: '0.5',
-  //      cursor: 'not-allowed'
-  //    }
-   //
-  //    value = '#'
-  //  }
-
-  return (
-    <div className={[styles.item, styles[type]].join(' ')} onClick={onClick} value={value} key={index} icon={icon} style={style}>
-      <div style={{display: 'flex', alignItems: 'center'}} value={value}>
-        <img src={icon} style={{width: '3.5rem', marginRight: '1.5rem'}} value={value}/>
+ }) => (
+  <div onClick={onClick} name={value}>
+    <div className={[styles.item, styles[type]].join(' ')} key={index} icon={icon}>
+      <div style={{display: 'flex', alignItems: 'center'}}>
+        <img src={icon} style={{width: '3.5rem', marginRight: '1.5rem'}}/>
         <div>
-          <span className={styles.methodTitle} value={value}>{brewMethod}</span>
-          <p className={styles.description} value={value}>{description}</p>
+          <span className={styles.methodTitle}>{brewMethod}</span>
+          <p className={styles.description}>{description}</p>
         </div>
       </div>
-      <img src={rightArrow} value={value}/>
+      <img src={rightArrow}/>
     </div>
-  )
-}
+  </div>
+)
 
 export default MenuItem

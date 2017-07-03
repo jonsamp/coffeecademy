@@ -31,7 +31,7 @@ export default class SummaryContainer extends React.Component {
       method: this.props.recipe.method
     })
 
-    rootRef.on('value', snap => {
+    rootRef.on('value', (/* snap */) => {
 
       // let facts = [
       //   this.calcTotalWeight,
@@ -138,7 +138,7 @@ export default class SummaryContainer extends React.Component {
       'username': 'caffeine-bot',
       'icon_emoji': ':coffee:',
       'channel': '#caffeinators',
-      'text': `Fresh ${this.props.recipe.method}! (approx. ${Math.round(this.props.grams / 16) } - ${Math.round(this.props.grams / 16) + 1} cups)${ this.state.fact ? `\nFact: ${this.state.fact}` : `` }`
+      'text': `Fresh ${this.props.recipe.method}! (approx. ${Math.round(this.props.grams / 16) } - ${Math.round(this.props.grams / 16) + 1} cups)${ this.state.fact ? `\nFact: ${this.state.fact}` : '' }`
     }
 
     let xmlhttp = new XMLHttpRequest(),
