@@ -1,4 +1,5 @@
 import React from 'react'
+import { repeat } from 'lodash'
 import Summary from '../components/summary/Summary'
 import factsList from '../data/facts'
 
@@ -138,7 +139,8 @@ export default class SummaryContainer extends React.Component {
       'username': 'caffeine-bot',
       'icon_emoji': ':coffee:',
       'channel': '#caffeinators',
-      'text': `Fresh ${this.props.recipe.method}! (approx. ${Math.round(this.props.grams / 16) } - ${Math.round(this.props.grams / 16) + 1} cups)${ this.state.fact ? `\nFact: ${this.state.fact}` : '' }`
+      'text': `
+        Fresh ${this.props.recipe.method}! ${repeat('☕️', ((this.props.grams / 16 ) + 1))}${ this.state.fact ? `\nFact: ${this.state.fact}` : '' }`
     }
 
     let xmlhttp = new XMLHttpRequest(),
