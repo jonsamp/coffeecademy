@@ -1,4 +1,4 @@
-# coffeecademy
+# [coffeecademy](https://jonsamp.github.io/coffeecademy/)
 
 Learn how to make craft coffee and tea.
 
