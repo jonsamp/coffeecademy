@@ -35,6 +35,9 @@ App architecture:
 Automatically:
 
 1. Run the **deploy.sh** script in the parent folder.
+  ```
+  sh deploy.sh
+  ```
 
 Manually:
 
