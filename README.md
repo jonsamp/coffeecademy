@@ -14,14 +14,23 @@ Design mocks:
 App architecture:
 ![architecture](https://cloud.githubusercontent.com/assets/6455018/22179338/975b9770-e01e-11e6-8d45-af48c58889eb.png)
 
-# Add a recipe
+## Run app locally
+
+1. Clone the app
+  ```
+  git clone git@github.com:jonsamp/coffeecademy.git
+  ```
+2. `yarn install`
+3. Run the app with `yarn start`
+
+## Add a recipe
 
 1. Add json to `/src/recipes`
 2. Import it into to `/src/containers/ViewContainer`
 3. Add recipe into `recipes` var in `/src/containers/ViewContainer`
 4. Add the recipe's icon to the `brewIcons` object in `/src/containers/SummaryContainer`  
 
-# How to deploy
+## How to deploy
 
 Automatically:
 
