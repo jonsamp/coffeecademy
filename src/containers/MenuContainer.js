@@ -1,42 +1,27 @@
-import React, { Component } from 'react'
-import TitleBar from '../components/menu/TitleBar'
-import MenuItem from '../components/menu/MenuItem'
-import chemex from '../images/chemex.svg'
-import aeropress from '../images/aeropress.svg'
-import pourOver from '../images/pourOver.svg'
-import percolator from '../images/percolator.svg'
-import icedChemex from '../images/iced-chemex.svg'
-import s from './index.scss'
+import React, { Component } from 'react';
+import TitleBar from '../components/menu/TitleBar';
+import MenuItem from '../components/menu/MenuItem';
+import s from './styles/MenuContainer.scss';
 
 class MenuContainer extends Component {
-
-  brewIcons = {
-    chemex,
-    aeropress,
-    pourOver,
-    percolator,
-    icedChemex
-  }
-
-  menuItems(type) {
-
+  menuItems() {
     // Gets beverage type
-    let beverage = this.props.recipes[type]
+    const recipes = this.props.recipes;
 
-    // Loop through all keys, display all menu items of that type.
+    // Loop through all keys, display all menu items
     // The value attr gets passed up to ViewContainer, used in getSelection
-    return Object.keys(beverage).map((recipe, index) => {
+    return Object.keys(recipes).map((recipe, index) => {
       return (
         <MenuItem
           onClick={this.props.getSelection}
-          value={`${type} ${recipe}`}
+          value={recipe}
           key={index}
-          brewMethod={beverage[recipe].method}
-          description={beverage[recipe].description}
-          cardIcon={beverage[recipe].cardIcon}
+          brewMethod={recipes[recipe].method}
+          description={recipes[recipe].description}
+          cardIcon={recipes[recipe].cardIcon}
         />
-      )
-    })
+      );
+    });
   }
 
   render() {
@@ -44,11 +29,11 @@ class MenuContainer extends Component {
       <div>
         <TitleBar />
         <div className={s.menu}>
-          {this.menuItems('coffee')}
+          {this.menuItems()}
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default MenuContainer
+export default MenuContainer;

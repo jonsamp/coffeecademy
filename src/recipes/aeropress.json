@@ -6,43 +6,48 @@
   "grind": 30,
   "bloomMultiplier": 9,
   "pourMultiplier": 0,
-  "steps": [{
-    "title": "Prep & Pre-heat",
-    "summary": "Heat water. Pre-wet filter.",
-    "instructions": "1. Bring your water to a boil then let it cool for 10 seconds.\n2. Place circular paper filter in the Aeropress' slotted cap, then attach to the Aeropress body.\n3. Place on top of a coffee cup, and wet the filter. Discard any excess water.\n\nPress 'Next' to continue." ,
-    "image": "https://s3.amazonaws.com/coffeecademy/aeropress-prep.gif",
-    "components": {}
-  }, {
-    "title": "Weigh & Grind",
-    "summary": "Weigh coffee and grind.",
-    "instructions": "1. Weigh 10 to 25 grams of coffee.\n2. Grind finely, like an espresso.\n3. Place coffee cup on scale, with Aeropress on top.\n4. Pour grounds into the Aeropress body.\n5. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue."  ,
-    "image": "https://s3.amazonaws.com/coffeecademy/aeropress-weigh.gif",
-    "components": {
-      "gramSlider": {
-        "min": 10,
-        "max": 25,
-        "gramsPerCup": 20
+  "steps": [
+    {
+      "title": "Prep & Pre-heat",
+      "summary": "Heat water. Pre-wet filter.",
+      "instructions": "1. Bring your water to a boil then let it cool for 10 seconds.\n2. Place circular paper filter in the Aeropress' slotted cap, then attach to the Aeropress body.\n3. Place on top of a coffee cup, and wet the filter. Discard any excess water.\n\nPress 'Next' to continue.",
+      "image": "https://s3.amazonaws.com/coffeecademy/aeropress-prep.gif",
+      "components": {}
+    },
+    {
+      "title": "Weigh & Grind",
+      "summary": "Weigh coffee and grind.",
+      "instructions": "1. Weigh 10 to 25 grams of coffee.\n2. Grind finely, like an espresso.\n3. Place coffee cup on scale, with Aeropress on top.\n4. Pour grounds into the Aeropress body.\n5. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue.",
+      "image": "https://s3.amazonaws.com/coffeecademy/aeropress-weigh.gif",
+      "components": {
+        "gramSlider": {
+          "min": 10,
+          "max": 25,
+          "gramsPerCup": 20
+        }
+      }
+    },
+    {
+      "title": "Bloom",
+      "summary": "Pour ${bloomWater} grams of water over grounds.",
+      "instructions": "1. Press 'Start Timer', then pour over ${bloomWater} grams of water over the coffee inside the Aeropress.\n2. After 30 seconds, use the plastic stirer to stir the coffee three times.",
+      "image": "https://s3.amazonaws.com/coffeecademy/aeropress-bloom.gif",
+      "components": {
+        "timer": {
+          "seconds": 30
+        }
+      }
+    },
+    {
+      "title": "Press",
+      "summary": "Press coffee over 45 seconds.",
+      "instructions": "1. Press 'Start Timer'.\n2. Insert the plunger and apply pressure to press coffee into cup.\n3. Cease when you hear a long hiss. Then, remove Aeropress and discard filter and coffee grounds. (Caution, cap is hot).\n4. Top off the cup with extra hot water from the kettle, and enjoy.",
+      "image": "https://s3.amazonaws.com/coffeecademy/aeropress-press.gif",
+      "components": {
+        "timer": {
+          "seconds": 45
+        }
       }
     }
-  }, {
-    "title": "Bloom",
-    "summary": "Pour ${bloomWater} grams of water over grounds.",
-    "instructions": "1. Press 'Start Timer', then pour over ${bloomWater} grams of water over the coffee inside the Aeropress.\n2. After 30 seconds, use the plastic stirer to stir the coffee three times.",
-    "image": "https://s3.amazonaws.com/coffeecademy/aeropress-bloom.gif",
-    "components": {
-      "timer": {
-        "seconds": 30
-      }
-    }
-  }, {
-    "title": "Press",
-    "summary": "Press coffee over 45 seconds.",
-    "instructions": "1. Press 'Start Timer'.\n2. Insert the plunger and apply pressure to press coffee into cup.\n3. Cease when you hear a long hiss. Then, remove Aeropress and discard filter and coffee grounds. (Caution, cap is hot).\n4. Top off the cup with extra hot water from the kettle, and enjoy.",
-    "image": "https://s3.amazonaws.com/coffeecademy/aeropress-press.gif",
-    "components": {
-      "timer": {
-        "seconds": 45
-      }
-    }
-  }]
+  ]
 }

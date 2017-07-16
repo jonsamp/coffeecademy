@@ -1,28 +1,44 @@
-import React from 'react'
-import GramSlider from '../components/instructions/GramSlider'
-import CountdownContainer from './CountdownContainer'
+import React from 'react';
+import GramSlider from '../components/instructions/GramSlider';
+import CountdownContainer from './CountdownContainer';
+import s from './styles/CountdownContainer.scss';
 
 export default class ComponentContainer extends React.Component {
-
   getComponent() {
+    const {
+      setGrams,
+      currentGrams,
+      currentStep: { components: { gramSlider, timer } },
+      advanceStep,
+      pourWater
+    } = this.props;
 
-    let component = this.props.currentStep.components
+    if (gramSlider) {
+      return (
+        <GramSlider
+          setGrams={setGrams}
+          currentGrams={currentGrams}
+          min={gramSlider.min}
+          max={gramSlider.max}
+          gramsPerCup={gramSlider.gramsPerCup}
+        />
+      );
+    } else if (timer) {
+      let seconds = timer.seconds;
 
-    if (component.gramSlider) {
-      let slider = component.gramSlider
-      return <GramSlider setGrams={this.props.setGrams} currentGrams={this.props.currentGrams} min={slider.min} max={slider.max} gramsPerCup={slider.gramsPerCup} />
+      if (timer.calculated) {
+        seconds = Math.round(pourWater * 0.58);
+      }
 
-    } else if (component.timer) {
-      return <CountdownContainer seconds={component.timer.seconds} advanceStep={this.props.advanceStep}/>
+      return <CountdownContainer seconds={seconds} advanceStep={advanceStep} />;
     }
   }
 
   render() {
     return (
-      <div style={{backgroundColor: '#2B2B2B', height: '92vh', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+      <div className={s.countdownContainer}>
         {this.getComponent()}
       </div>
-    )
+    );
   }
-
 }

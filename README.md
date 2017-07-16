@@ -19,7 +19,7 @@ App architecture:
 1. Add json to `/src/recipes`
 2. Import it into to `/src/containers/ViewContainer`
 3. Add recipe into `recipes` var in `/src/containers/ViewContainer`
-4. Add the recipe's icon to the `brewIcons` object in `/src/containers/MenuContainer`
+4. Add the recipe's icon to the `brewIcons` object in `/src/containers/SummaryContainer`  
 
 # How to deploy
 

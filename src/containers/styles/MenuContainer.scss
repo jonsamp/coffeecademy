@@ -1,7 +1,9 @@
+@import 'src/components/global/colors';
+
 .menu {
   display: flex;
   flex-wrap: wrap;
-  background-color: #2B2B2B;
+  background-color: $gray2;
   height: 90vh;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;

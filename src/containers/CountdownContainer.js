@@ -1,16 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Clock from '../components/instructions/Clock'
 
-export default class CountdownTimer extends React.Component {
+class CountdownTimer extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      secondsRemaining: 0,
-      interval: null,
-      seconds: props.seconds,
-      timerRunning: false
-    }
+  state = {
+    secondsRemaining: 0,
+    interval: null,
+    seconds: this.props.seconds,
+    timerRunning: false
   }
 
   countdown = () => {
@@ -100,3 +97,5 @@ export default class CountdownTimer extends React.Component {
       )
   }
 }
+
+export default CountdownTimer

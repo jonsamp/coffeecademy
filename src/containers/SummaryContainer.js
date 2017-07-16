@@ -1,9 +1,15 @@
-import React from 'react'
-import { repeat } from 'lodash'
-import Summary from '../components/summary/Summary'
-import factsList from '../data/facts'
+import React from 'react';
+import { repeat } from 'lodash';
+import firebase from 'firebase';
+import Summary from '../components/summary/Summary';
+import factsList from '../data/facts';
 
-import firebase from 'firebase'
+// Coffee icons
+import chemex from '../images/chemex.svg';
+import aeropress from '../images/aeropress.svg';
+import pourOver from '../images/pourOver.svg';
+import percolator from '../images/percolator.svg';
+import icedChemex from '../images/iced-chemex.svg';
 
 const config = {
   apiKey: 'AIzaSyDnVcd1NckRvX8fw52wNNPz_V7kcgYERhA',
@@ -16,148 +22,93 @@ const config = {
 firebase.initializeApp(config);
 
 export default class SummaryContainer extends React.Component {
-
   state = {
     fact: '',
     slackSent: false,
     timeout: null
-  }
+  };
+
+  brewIcons = {
+    chemex,
+    aeropress,
+    pourOver,
+    percolator,
+    icedChemex
+  };
 
   componentDidMount() {
-    const rootRef = firebase.database().ref().child('coffee')
+    const rootRef = firebase.database().ref().child('coffee');
+    const getRandomNumber = arr => Math.floor(Math.random() * arr.length);
+    const catEmojis = ['😺', '😸', '😹', '😻', '😼', '🙀', '🐱', '🐈'];
 
+    // Save details in firebase
     rootRef.push({
       grams: this.props.grams,
-      timeStamp: (new Date()).getTime(),
+      timeStamp: new Date().getTime(),
       method: this.props.recipe.method
-    })
+    });
 
-    rootRef.on('value', (/* snap */) => {
+    // Generate a random fact
+    let fact = `${factsList[getRandomNumber(factsList)]} ${catEmojis[
+      getRandomNumber(catEmojis)
+    ]}`;
 
-      // let facts = [
-      //   this.calcTotalWeight,
-      //   this.calcAverageTime,
-      //   this.numberOfBrews,
-      //   this.getNumberOfBrew,
-      //   this.calcTotalVolume
-      // ]
-
-      const catEmojis = ['😺', '😸', '😹', '😻', '😼', '🙀', '🐱', '🐈']
-      const getRandomNumber = arr => Math.floor(Math.random() * arr.length)
-
-      // Generate a random fact
-      // let fact = factsList[randomNumber](snap.val())
-      let fact = `${factsList[getRandomNumber(factsList)]} ${catEmojis[getRandomNumber(catEmojis)]}`
-      this.setState({
-        fact: fact
-      })
-    })
+    this.setState({
+      fact: fact
+    });
 
     // Goes back to the menu after 1 minute
     this.setState({
-      timeout: setTimeout(() => { this.props.toggleMenu() }, 60000)
-    })
+      timeout: setTimeout(() => {
+        this.props.toggleMenu();
+      }, 60000)
+    });
   }
 
   componentWillUnmount() {
-
     // Stop the timeout if this component unmounts
-    clearTimeout(this.state.timeout)
+    clearTimeout(this.state.timeout);
   }
-
-  // calcTotalWeight = (data) => {
-  //   let keys = Object.keys(data)
-  //   let totalGrams = 0
-  //
-  //   keys.forEach((key) => {
-  //     if (data[key].grams) {
-  //       totalGrams = totalGrams + (data[key].grams)
-  //     }
-  //   })
-  //
-  //   return `Added all up, Bunn Bean has ground a total of ${(totalGrams * 0.00220462).toFixed(2)} pounds of coffee. 💪`
-  // }
-
-  // calcTotalVolume = (data) => {
-  //   let keys = Object.keys(data)
-  //   let totalGrams = 0
-  //
-  //   keys.forEach((key) => {
-  //     if (data[key].grams) {
-  //       totalGrams = totalGrams + (data[key].grams)
-  //     }
-  //   })
-  //
-  //   return `We've brewed a total of ${((totalGrams * 16) * 0.000227020744565).toFixed(2)} gallons of coffee. 🚰`
-  // }
-
-  // numberOfBrews = (data) => {
-  //   return `A total of ${Object.keys(data).length} brews have been made since coffeecademy's inception. 😸`
-  // }
-
-  // getNumberOfBrew = (data) => {
-  //   let keys = Object.keys(data)
-  //   let brewNumber = 0
-  //
-  //   keys.forEach((key) => {
-  //     if (data[key].method === this.props.recipe.method) {
-  //       brewNumber++
-  //     }
-  //   })
-  //
-  //   return `We've brewed ${brewNumber} ${this.props.recipe.method}s with coffeecademy. 👌`
-  //
-  // }
-
-  // calcAverageTime = (data) => {
-  //   let keys = Object.keys(data)
-  //   let times = []
-  //   keys.forEach((key) => {
-  //     times.push(data[key].timeStamp)
-  //   })
-  //
-  //   let sortedTimes = times.sort((a, b) => {
-  //     return a - b
-  //   })
-  //
-  //   let medianTime = sortedTimes[Math.round(sortedTimes.length / 2)]
-  //   let date = new Date(Math.floor(medianTime))
-  //
-  //   let time
-  //
-  //   if (/\:/.exec(date.toLocaleTimeString().slice(0,2))) {
-  //     time = date.toLocaleTimeString().slice(0,4) + date.toLocaleTimeString().slice(8,10)
-  //   } else {
-  //     time = date.toLocaleTimeString().slice(0,5) + date.toLocaleTimeString().slice(9,11)
-  //   }
-  //
-  //   return `The most popular time to make craft coffee is ${time}. ⌚️`
-  // }
 
   sendMessageToSlack = () => {
     let payload = {
-      'username': 'caffeine-bot',
-      'icon_emoji': ':coffee:',
-      'channel': '#caffeinators',
-      'text': `
-        Fresh ${this.props.recipe.method}! ${repeat('☕️', ((this.props.grams / 16 ) + 1))}${ this.state.fact ? `\nFact: ${this.state.fact}` : '' }`
-    }
+      username: 'caffeine-bot',
+      icon_emoji: ':coffee:',
+      channel: '#caffeinators',
+      text: `
+        Fresh ${this.props.recipe.method}! ${repeat(
+        '☕️',
+        this.props.grams / 16 + 1
+      )}${this.state.fact ? `\nFact: ${this.state.fact}` : ''}`
+    };
 
     let xmlhttp = new XMLHttpRequest(),
-        webhook_url = 'https://hooks.slack.com/services/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',
-        myJSONStr= JSON.stringify(payload);
+      webhook_url =
+        'https://hooks.slack.com/services/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',
+      myJSONStr = JSON.stringify(payload);
     xmlhttp.open('POST', webhook_url, false);
-    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xmlhttp.setRequestHeader(
+      'Content-Type',
+      'application/x-www-form-urlencoded'
+    );
     xmlhttp.send(myJSONStr);
 
     this.setState({
       slackSent: true
-    })
-  }
+    });
+  };
 
   render() {
     return (
-      <Summary toggleMenu={this.props.toggleMenu} grams={this.props.grams} recipe={this.props.recipe} fact={this.state.fact} sendMessageToSlack={this.sendMessageToSlack} slackSent={this.state.slackSent}/>
-    )
+      <Summary
+        toggleMenu={this.props.toggleMenu}
+        grams={this.props.grams}
+        recipe={this.props.recipe}
+        fact={this.state.fact}
+        sendMessageToSlack={this.sendMessageToSlack}
+        slackSent={this.state.slackSent}
+        brewIcons={this.brewIcons}
+      />
+    );
   }
 }
