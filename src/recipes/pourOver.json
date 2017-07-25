@@ -45,7 +45,8 @@
       "image": "https://s3.amazonaws.com/coffeecademy/pour-over-pour.gif",
       "components": {
         "timer": {
-          "calculated": true
+          "calculated": true,
+          "pourRate": 0.58
         }
       }
     }

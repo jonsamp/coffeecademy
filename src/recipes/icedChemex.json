@@ -46,7 +46,8 @@
       "image": "https://s3.amazonaws.com/coffeecademy/ice-chemex-pour.gif",
       "components": {
         "timer": {
-          "calculated": true
+          "calculated": true,
+          "pourRate": 0.44
         }
       }
     }

@@ -1,24 +1,22 @@
-import React, { Component } from 'react'
-import Clock from '../components/instructions/Clock'
+import React, { Component } from 'react';
+import Clock from '../components/instructions/Clock';
 
 class CountdownTimer extends Component {
-
   state = {
     secondsRemaining: 0,
     interval: null,
     seconds: this.props.seconds,
     timerRunning: false
-  }
+  };
 
   countdown = () => {
     this.setState({
       secondsRemaining: this.state.secondsRemaining - 1
-    })
+    });
 
-    this.percentComplete()
+    this.percentComplete();
 
     if (this.state.secondsRemaining <= 0) {
-
       // Ding when the timer is finished
       // let audio = new Audio('https://s3.amazonaws.com/coffeecademy/ding.mp3')
       // audio.play()
@@ -30,34 +28,34 @@ class CountdownTimer extends Component {
       this.props.advanceStep();
     }
 
-    return this.state.secondsRemaining
-  }
+    return this.state.secondsRemaining;
+  };
 
   startCountdown = () => {
     if (!this.state.timerRunning) {
-      this.setState({ timerRunning: true })
-      this.interval = setInterval(this.countdown, 1000)
+      this.setState({ timerRunning: true });
+      this.interval = setInterval(this.countdown, 1000);
     } else {
-      this.setState({ timerRunning: false })
-      clearInterval(this.interval)
+      this.setState({ timerRunning: false });
+      clearInterval(this.interval);
     }
-  }
+  };
 
   formatSeconds(time) {
-      // Minutes and seconds
+    // Minutes and seconds
     var mins = ~~(time / 60);
     var secs = time % 60;
 
     // Hours, minutes and seconds
     var hrs = ~~(time / 3600);
-    var mins = ~~((time % 3600) / 60);
+    var mins = ~~(time % 3600 / 60);
     var secs = time % 60;
 
     // Output like '1:01' or '4:03:59' or '123:03:59'
     var ret = '';
 
     if (hrs > 0) {
-        ret += '' + hrs + ':' + (mins < 10 ? '0' : '');
+      ret += '' + hrs + ':' + (mins < 10 ? '0' : '');
     }
 
     ret += '' + mins + ':' + (secs < 10 ? '0' : '');
@@ -66,36 +64,39 @@ class CountdownTimer extends Component {
   }
 
   percentComplete() {
-    let percent = (1 - ((this.state.secondsRemaining )/ this.props.seconds)) * 100
-    return percent
+    let percent = (1 - this.state.secondsRemaining / this.props.seconds) * 100;
+    return percent;
   }
 
   componentDidMount() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
     this.setState({
       secondsRemaining: this.props.seconds
-    })
+    });
   }
 
   componentWillReceiveProps(nextProps) {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
     this.setState({
       secondsRemaining: nextProps.seconds,
       timerRunning: false
-    })
+    });
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   }
 
   render() {
     return (
-      <div>
-      <Clock time={this.formatSeconds(this.state.secondsRemaining)} percent={this.percentComplete()} startTimer={this.startCountdown} timerRunning={this.state.timerRunning}/>
-        </div>
-      )
+      <Clock
+        time={this.formatSeconds(this.state.secondsRemaining)}
+        percent={this.percentComplete()}
+        startTimer={this.startCountdown}
+        timerRunning={this.state.timerRunning}
+      />
+    );
   }
 }
 
-export default CountdownTimer
+export default CountdownTimer;
