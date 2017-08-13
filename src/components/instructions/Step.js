@@ -6,7 +6,6 @@ const Step = ({ title, summary, instructions, image, emptyComponent }) => {
   let style = {};
   if (emptyComponent) {
     style = {
-      transform: 'translateX(50%)',
       maxWidth: '50vw'
     };
   }
@@ -24,9 +23,9 @@ const Step = ({ title, summary, instructions, image, emptyComponent }) => {
           className={styles.step}
           dangerouslySetInnerHTML={{ __html: marked(instructions) }}
         />
-      </div>
-      <div className={styles.imageWrapper}>
-        {image && <img src={image} className={styles.image} />}
+        <div className={styles.imageWrapper}>
+          {image && <img src={image} className={styles.image} />}
+        </div>
       </div>
     </div>
   );
