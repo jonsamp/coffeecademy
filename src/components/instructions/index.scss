@@ -4,6 +4,7 @@
   padding: 0 3rem;
   overflow: scroll;
   animation: fade-in 0.5s linear;
+  padding-bottom: 10rem;
 }
 
 h1 {
@@ -49,11 +50,11 @@ p ul {
 .wrapper {
   height: 98vh;
   margin-top: 2vh;
-  margin-left: 2vw;
+  margin-left: 1.5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: auto;
   width: 100%;
   background-color: $gray1;
   transition: 0.5s;

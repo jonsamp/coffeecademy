@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './index.scss';
+import hamburger from '../../images/hamburger.svg';
 
 const Nav = ({ nextStep, toggleMenu, recipe, currentStep, goToStep }) => {
   console.log(recipe);
@@ -22,7 +23,7 @@ const Nav = ({ nextStep, toggleMenu, recipe, currentStep, goToStep }) => {
           onClick={toggleMenu}
           className={[styles.button, styles.menu].join(' ')}
         >
-          <img src="../../images/hamburger.svg" />
+          <img src={hamburger} />
         </div>
         <div className={styles.stepProgress}>
           {stepTitle()}
