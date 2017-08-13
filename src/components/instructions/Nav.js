@@ -3,7 +3,6 @@ import styles from './index.scss';
 import hamburger from '../../images/hamburger.svg';
 
 const Nav = ({ nextStep, toggleMenu, recipe, currentStep, goToStep }) => {
-  console.log(recipe);
   const stepTitle = () => {
     return recipe.steps.map((step, index) => {
       if (index === currentStep) {

@@ -6,7 +6,9 @@ const Step = ({ title, summary, instructions, image, emptyComponent }) => {
   let style = {};
   if (emptyComponent) {
     style = {
-      maxWidth: '50vw'
+      transform: 'translateX(40%)',
+      maxWidth: '50vw',
+      padding: '0 2vw'
     };
   }
 
