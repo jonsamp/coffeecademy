@@ -16,23 +16,21 @@ const Nav = ({ nextStep, toggleMenu, recipe, currentStep, goToStep }) => {
   };
 
   return (
-    <div className={styles.nav}>
-      <div className={styles.actionBar}>
-        <div
-          onClick={toggleMenu}
-          className={[styles.button, styles.menu].join(' ')}
-        >
-          <img src={hamburger} />
-        </div>
-        <div className={styles.stepProgress}>
-          {stepTitle()}
-        </div>
-        <div
-          onClick={nextStep}
-          className={[styles.button, styles.next].join(' ')}
-        >
-          Next
-        </div>
+    <div className={styles.actionBar}>
+      <div
+        onClick={toggleMenu}
+        className={[styles.button, styles.menu].join(' ')}
+      >
+        <img src={hamburger} />
+      </div>
+      <div className={styles.stepProgress}>
+        {stepTitle()}
+      </div>
+      <div
+        onClick={nextStep}
+        className={[styles.button, styles.next].join(' ')}
+      >
+        Next
       </div>
     </div>
   );

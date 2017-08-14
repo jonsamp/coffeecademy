@@ -64,18 +64,11 @@ p ul {
   border-radius: 6px 6px 0 0;
 }
 
-.nav {
-  color: $gray1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .actionBar {
   color: $gray1;
   width: 50%;
   position: fixed;
+  left: 25%;
   display: flex;
   justify-content: space-between;
   align-items: center;
