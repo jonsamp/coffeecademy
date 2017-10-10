@@ -8,6 +8,7 @@ import pourOver from '../recipes/pourOver.json';
 import aeropress from '../recipes/aeropress.json';
 import percolator from '../recipes/percolator.json';
 import icedChemex from '../recipes/icedChemex.json';
+import cupping from '../recipes/cupping.json';
 
 export default class ViewContainer extends React.Component {
   state = {
@@ -18,7 +19,8 @@ export default class ViewContainer extends React.Component {
       icedChemex,
       pourOver,
       aeropress,
-      percolator
+      percolator,
+      cupping
     }
   };
 

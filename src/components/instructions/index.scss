@@ -214,6 +214,15 @@ p span {
   animation: pulse 2s infinite;
   border-radius: 6px;
 }
+
+.image {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: auto;
+}
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale(1);

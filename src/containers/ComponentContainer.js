@@ -1,5 +1,6 @@
 import React from 'react';
 import GramSlider from '../components/instructions/GramSlider';
+import Image from '../components/instructions/Image';
 import CountdownContainer from './CountdownContainer';
 import s from './styles/CountdownContainer.scss';
 
@@ -8,7 +9,7 @@ export default class ComponentContainer extends React.Component {
     const {
       setGrams,
       currentGrams,
-      currentStep: { components: { gramSlider, timer } },
+      currentStep: { components: { gramSlider, timer, image } },
       advanceStep,
       pourWater
     } = this.props;
@@ -31,14 +32,12 @@ export default class ComponentContainer extends React.Component {
       }
 
       return <CountdownContainer seconds={seconds} advanceStep={advanceStep} />;
+    } else if (image) {
+      return <Image src={image} />;
     }
   }
 
   render() {
-    return (
-      <div className={s.countdownContainer}>
-        {this.getComponent()}
-      </div>
-    );
+    return <div className={s.countdownContainer}>{this.getComponent()}</div>;
   }
 }

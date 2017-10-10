@@ -107,38 +107,40 @@ export default class InstructionsContainer extends React.Component {
       currentStep.instructions
     );
 
-    return this.state.summaryVisible
-      ? <SummaryContainer
-          grams={this.state.grams}
-          recipe={this.props.currentRecipe}
-          toggleMenu={this.props.toggleMenu}
-        />
-      : <div>
-          <div className="displayHorizontal">
-            <Step
-              title={currentStep.title}
-              summary={interpolatedSummary}
-              instructions={interpolatedInstruction}
-              image={currentStep.image}
-              emptyComponent={isEmpty(currentStep.components)}
-            />
-            {!isEmpty(currentStep.components)
-              ? <ComponentContainer
-                  currentStep={currentStep}
-                  pourWater={pourWater}
-                  currentGrams={grams}
-                  setGrams={this.setGrams}
-                  advanceStep={this.advanceStep}
-                />
-              : null}
-          </div>
-          <Nav
-            nextStep={this.advanceStep}
-            toggleMenu={this.props.toggleMenu}
-            recipe={this.props.currentRecipe}
-            currentStep={this.state.stepIndex}
-            goToStep={this.goToStep}
+    return this.state.summaryVisible ? (
+      <SummaryContainer
+        grams={this.state.grams}
+        recipe={this.props.currentRecipe}
+        toggleMenu={this.props.toggleMenu}
+      />
+    ) : (
+      <div>
+        <div className="displayHorizontal">
+          <Step
+            title={currentStep.title}
+            summary={interpolatedSummary}
+            instructions={interpolatedInstruction}
+            image={currentStep.image}
+            emptyComponent={isEmpty(currentStep.components)}
           />
-        </div>;
+          {!isEmpty(currentStep.components) ? (
+            <ComponentContainer
+              currentStep={currentStep}
+              pourWater={pourWater}
+              currentGrams={grams}
+              setGrams={this.setGrams}
+              advanceStep={this.advanceStep}
+            />
+          ) : null}
+        </div>
+        <Nav
+          nextStep={this.advanceStep}
+          toggleMenu={this.props.toggleMenu}
+          recipe={this.props.currentRecipe}
+          currentStep={this.state.stepIndex}
+          goToStep={this.goToStep}
+        />
+      </div>
+    );
   }
 }
