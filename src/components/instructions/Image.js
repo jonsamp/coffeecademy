@@ -7,7 +7,7 @@ const propTypes = {
 };
 
 function Image(props) {
-  return <img src={props.src} className={s.image} />;
+  return <img src={props.src} className={s.presentationImage} />;
 }
 
 Image.propTypes = propTypes;

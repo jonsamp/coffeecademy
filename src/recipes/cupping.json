@@ -2,53 +2,108 @@
   "method": "Cupping",
   "description": "Steps to cup specialty coffees",
   "icon": "chemex",
-  "cardIcon": "https://s3.amazonaws.com/coffeecademy/aeropress-card.jpg",
+  "cardIcon": "https://s3.amazonaws.com/coffeecademy/cupping-cover.jpg",
   "grind": 30,
   "bloomMultiplier": 9,
   "pourMultiplier": 0,
   "steps": [
     {
-      "title": "Welcome to Coffee Cupping",
-      "summary": "Learn to tast specialty coffees",
-      "instructions": "",
+      "title": "Coffee Cupping",
+      "summary": "",
+      "instructions":
+        "## Learn to taste and rate specialty coffees\n1. Trees\n2. Beans\n3. Processes\n4. Cupping Overview\n5. Cupping",
       "image": "",
       "components": {
-        "image": "https://cdn.evbuc.com/eventlogos/64729553/cupping12.jpg"
+        "image": "https://s3.amazonaws.com/coffeecademy/cupping-cover.jpg"
       }
     },
     {
-      "title": "Weigh & Grind",
-      "summary": "Weigh coffee and grind.",
-      "instructions": "1. Weigh 10 to 25 grams of coffee.\n2. Grind finely, like an espresso.\n3. Place coffee cup on scale, with Aeropress on top.\n4. Pour grounds into the Aeropress body.\n5. Enter the grams of coffee you'll brew to the right.\n\nPress 'Next' to continue.",
-      "image": "https://s3.amazonaws.com/coffeecademy/aeropress-weigh.gif",
+      "title": "Trees",
+      "summary": "",
+      "instructions":
+        "## _Coffea_ (genus)\n- Coffee grows on trees\n- Coffee is inside the coffee cherry\n- The coffee tree uses caffeine to defend against herbivores\n- Over 6,500 species of trees\n- Grows up to 8 meters tall\n- Coffee is growing for 3-5 months of the year\n",
+      "image": "",
       "components": {
-        "gramSlider": {
-          "min": 10,
-          "max": 25,
-          "gramsPerCup": 20
-        }
+        "image": "https://s3.amazonaws.com/coffeecademy/cupping-trees.png"
       }
     },
     {
-      "title": "Bloom",
-      "summary": "Pour ${bloomWater} grams of water over grounds.",
-      "instructions": "1. Press 'Start Timer', then pour over ${bloomWater} grams of water over the coffee inside the Aeropress.\n2. After 30 seconds, use the plastic stirer to stir the coffee three times.",
-      "image": "https://s3.amazonaws.com/coffeecademy/aeropress-bloom.gif",
+      "title": "Beans",
+      "summary": "",
+      "instructions": "## Arabica & Robusta\n### Arabica\n- ~70% of coffee is Arabica (all specialty coffees)\n- Can have floral, fruity, earthy notes\n- Susceptible to pests\n### Robusta\n- Can have bitter, charcoal taste\n- Much less susceptible to pests",
+      "image": "",
+      "components": {
+        "image": "https://s3.amazonaws.com/coffeecademy/cupping-beans.png"
+      }
+    },
+    {
+      "title": "Process",
+      "summary": "",
+      "instructions": "## Washed & Dry Process\n### Washed\n- Coffee cherries are washed to remove the cherry fruit husk\n- Flavors often have earthy/more subtle characteristics\n### Dry Process\n- Fruit is left on, coffee then dries on flat beds/concrete landings\n- Maintains fruitier/distinct flavors",
+      "image": "",
+      "components": {
+        "image": "https://s3.amazonaws.com/coffeecademy/cupping-process.png"
+      }
+    },
+    {
+      "title": "Cupping Overview",
+      "summary": "",
+      "instructions":
+        "### Process\n1. Fragance & aroma\n2. Flavor, Aftertaste, Acidity, Body, & Balance\n3. Sweetness, Uniformity, & Cleanliness\n4. Scoring",
+      "image": "",
+      "components": {
+        "image": "https://s3.amazonaws.com/coffeecademy/cupping-cover.jpg"
+      }
+    },
+    {
+      "title": "Fragance & aroma",
+      "summary": "",
+      "instructions": "1. Smell the ground coffee in cups\n2. Wet the coffee with water in a 1:15 ratio\n3. Wait 4 minutes\n4. Break the crust and smell again\n5. Finish fragrance scoring",
+      "image": "https://s3.amazonaws.com/coffeecademy/cupping-dry-aroma.jpg",
       "components": {
         "timer": {
-          "seconds": 30
+          "seconds": 240
         }
       }
     },
     {
-      "title": "Press",
-      "summary": "Press coffee over 45 seconds.",
-      "instructions": "1. Press 'Start Timer'.\n2. Insert the plunger and apply pressure to press coffee into cup.\n3. Cease when you hear a long hiss. Then, remove Aeropress and discard filter and coffee grounds. (Caution, cap is hot).\n4. Top off the cup with extra hot water from the kettle, and enjoy.",
-      "image": "https://s3.amazonaws.com/coffeecademy/aeropress-press.gif",
+      "title": "Flavor, Aftertaste, Acidity, Body, & Balance",
+      "summary": "",
+      "instructions": "1. Wait 6 minutes for cups to cool to ~140 deg\n2. Slurp samples of each coffee, rate the flavor, aftertaste, acidity, body, and balance",
+      "image": "https://s3.amazonaws.com/coffeecademy/cupping-tasting.jpg",
       "components": {
         "timer": {
-          "seconds": 45
+          "seconds": 360
         }
+      }
+    },
+    {
+      "title": "Sweetness, Uniformity, & Cleanliness",
+      "summary": "",
+      "instructions": "1. Wait 5 minutes for cups to cool ~120 deg\n2. Slurp coffees again, this time scoring sweetness, uniformity, and cleanliness",
+      "image": "https://s3.amazonaws.com/coffeecademy/cupping-tasting.jpg",
+      "components": {
+        "timer": {
+          "seconds": 300
+        }
+      }
+    },
+    {
+      "title": "Scoring",
+      "summary": "",
+      "instructions": "1. Fill out the score card, add up points from each coffee\n2. Talk about each cup briefly, before the reveal",
+      "image": "",
+      "components": {
+        "image": "https://s3.amazonaws.com/coffeecademy/cupping-cover.jpg"
+      }
+    },
+    {
+      "title": "The big reveal",
+      "summary": "",
+      "instructions": "1. Guatemala Finca Insul (Washed), Onyx Coffee\n2. Hair Bender (Blend), Stumptown (grounds left out)\n3. Ethiopia Ardi (Dry Process), La Colombe\n4. Hair Bender (Blend), Stumptown\n5. Nicaragua La Bastilla (Dry Process), La Colombe",
+      "image": "",
+      "components": {
+        "image": "https://s3.amazonaws.com/coffeecademy/cupping-reveal.gif"
       }
     }
   ]
