@@ -11,8 +11,10 @@
       "title": "Prep & Pre-heat",
       "summary": "Heat water. Pre-wet filter.",
       "instructions": "1. Bring your water to a boil then let it cool for 10 seconds.\n2. Place circular paper filter in the Aeropress' slotted cap, then attach to the Aeropress body.\n3. Place on top of a coffee cup, and wet the filter. Discard any excess water.\n\nPress 'Next' to continue.",
-      "image": "https://s3.amazonaws.com/coffeecademy/aeropress-prep.gif",
-      "components": {}
+      "image": "",
+      "components": {
+        "image": "https://s3.amazonaws.com/coffeecademy/aeropress-prep.gif"
+      }
     },
     {
       "title": "Weigh & Grind",

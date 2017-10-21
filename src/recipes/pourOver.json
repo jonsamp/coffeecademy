@@ -11,8 +11,10 @@
       "title": "Prep & Pre-heat",
       "summary": "Heat water. Pre-wet filter.",
       "instructions": "1. Boil water in the kettle.\n2. Place a V60 filter in the ceramic V60, and place on top of a coffee cup.\n3. Pour hot water into the V60 to wet the filter. Discard the water that drips into the cup.\n\nPress 'Next' to continue.",
-      "image": "https://s3.amazonaws.com/coffeecademy/pour-over-prep.gif",
-      "components": {}
+      "image": "",
+      "components": {
+        "image": "https://s3.amazonaws.com/coffeecademy/pour-over-prep.gif"
+      }
     },
     {
       "title": "Weigh & Grind",
@@ -22,7 +24,7 @@
       "components": {
         "gramSlider": {
           "min": 10,
-          "max": 25,
+          "max": 35,
           "gramsPerCup": 15
         }
       }

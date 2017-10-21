@@ -25,8 +25,10 @@
       "title": "Add ice",
       "summary": "Add ${iceWater} grams of ice to the Chemex.",
       "instructions": "1. Add ${iceWater} grams of ice cubes to the carafe of the Chemex.\n2. Place a filter in the Chemex, wetting it with a small amount of water.\n3. Add coffee grounds to the Chemex.\n\nPress 'Next' to continue.",
-      "image": "https://s3.amazonaws.com/coffeecademy/ice-chemex-add-ice.gif",
-      "components": {}
+      "image": "",
+      "components": {
+        "image": "https://s3.amazonaws.com/coffeecademy/ice-chemex-add-ice.gif"
+      }
     },
     {
       "title": "Bloom",

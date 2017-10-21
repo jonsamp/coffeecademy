@@ -10,19 +10,25 @@
     "title": "Measure & Grind",
     "summary": "Measure your coffee and grind.",
     "instructions": "1. Fill the orange cup to the 1/2 mark with beans.\n2. Pour the beans into Bunn Bean's hopper.\n3. Set the grind to 11 o'clock.\n4. Grind the beans and use the cup to catch them." ,
-    "image": "https://s3.amazonaws.com/coffeecademy/perc-weigh.gif",
-    "components": {}
+    "image": "",
+    "components": {
+      "image": "https://s3.amazonaws.com/coffeecademy/perc-weigh.gif"
+    }
   }, {
     "title": "Prep",
     "summary": "Insert the filter and pour in the grounds",
     "instructions": "1. Put a filter in the percolator's basket.\n2. Pour in the coffee grounds.\n3. Re-insert the coffee basket into the percolator.",
-    "image": "https://s3.amazonaws.com/coffeecademy/perc-prep.gif",
-    "components": {}
+    "image": "",
+    "components": {
+      "image": "https://s3.amazonaws.com/coffeecademy/perc-prep.gif"
+    }
   }, {
     "title": "Brew",
     "summary": "Begin the brew process",
     "instructions": "1. Place the carafe below the percolator with the lid flipped up.\n2. Press the `Half Pot` button on the percolator to start the brew.\n\nTip: Only use the `Half Pot` button, as the `Full Pot` button will cause the filter to overflow resulting in grounds in the coffee.",
-    "image": "https://s3.amazonaws.com/coffeecademy/perc-brew.gif",
-    "components": {}
+    "image": "",
+    "components": {
+      "image": "https://s3.amazonaws.com/coffeecademy/perc-brew.gif"
+    }
   }]
 }
