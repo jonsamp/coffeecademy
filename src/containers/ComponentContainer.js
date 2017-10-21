@@ -28,7 +28,9 @@ export default class ComponentContainer extends React.Component {
       let seconds = timer.seconds;
 
       if (timer.calculated) {
-        seconds = Math.round(pourWater * timer.pourRate);
+        const calculatedTime = Math.round(pourWater * timer.pourRate);
+        const maxSeconds = 300;
+        seconds = calculatedTime < maxSeconds ? calculatedTime : maxSeconds;
       }
 
       return <CountdownContainer seconds={seconds} advanceStep={advanceStep} />;
