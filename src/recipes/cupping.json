@@ -41,7 +41,7 @@
       "title": "Process",
       "summary": "",
       "instructions":
-        "## Washed & Natural Process\n### Washed\n- Coffee cherries are washed to remove the cherry fruit husk\n- Flavors often have earthy/more subtle characteristics\n### Natural Process\n- Fruit is left on, coffee then dries on flat beds/concrete landings\n- Maintains fruitier/distinct flavors",
+        "## Washed & Dry Process\n### Washed\n- Coffee cherries are washed to remove the cherry fruit husk\n- Flavors often have earthy/more subtle characteristics\n### Dry Process\n- Fruit is left on, coffee then dries on flat beds/concrete landings\n- Maintains fruitier/distinct flavors",
       "image": "",
       "components": {
         "image": "https://s3.amazonaws.com/coffeecademy/cupping-process.png"
@@ -107,7 +107,7 @@
       "title": "The big reveal",
       "summary": "",
       "instructions":
-        "1. Ethiopia Bensa Shantawene (Natural), Onyx Coffee\n2. Hair Bender (Blend), Stumptown (grounds left out)\n3. Sumatra Highlands (Washed), Collectivo Coffee\n4. Hair Bender (Blend), Stumptown\n5. Guatemala Pulcal (Washed), Parlor Coffee",
+        "1. Ethiopia Bensa Shantawene (Dry Process), Onyx Coffee\n2. Hair Bender (Blend), Stumptown (grounds left out)\n3. Sumatra Highlands (Washed), Collectivo Coffee\n4. Hair Bender (Blend), Stumptown\n5. Guatemala Pulcal (Washed), Parlor Coffee",
       "image": "",
       "components": {
         "image": "https://s3.amazonaws.com/coffeecademy/cupping-reveal.gif"
