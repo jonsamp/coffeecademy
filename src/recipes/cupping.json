@@ -30,7 +30,8 @@
     {
       "title": "Beans",
       "summary": "",
-      "instructions": "## Arabica & Robusta\n### Arabica\n- ~70% of coffee is Arabica (all specialty coffees)\n- Can have floral, fruity, earthy notes\n- Susceptible to pests\n### Robusta\n- Can have bitter, charcoal taste\n- Much less susceptible to pests",
+      "instructions":
+        "## Arabica & Robusta\n### Arabica\n- ~70% of coffee is Arabica (all specialty coffees)\n- Can have floral, fruity, earthy notes\n- Susceptible to pests\n### Robusta\n- Can have bitter, charcoal taste\n- Much less susceptible to pests",
       "image": "",
       "components": {
         "image": "https://s3.amazonaws.com/coffeecademy/cupping-beans.png"
@@ -39,7 +40,8 @@
     {
       "title": "Process",
       "summary": "",
-      "instructions": "## Washed & Dry Process\n### Washed\n- Coffee cherries are washed to remove the cherry fruit husk\n- Flavors often have earthy/more subtle characteristics\n### Dry Process\n- Fruit is left on, coffee then dries on flat beds/concrete landings\n- Maintains fruitier/distinct flavors",
+      "instructions":
+        "## Washed & Natural Process\n### Washed\n- Coffee cherries are washed to remove the cherry fruit husk\n- Flavors often have earthy/more subtle characteristics\n### Natural Process\n- Fruit is left on, coffee then dries on flat beds/concrete landings\n- Maintains fruitier/distinct flavors",
       "image": "",
       "components": {
         "image": "https://s3.amazonaws.com/coffeecademy/cupping-process.png"
@@ -58,7 +60,8 @@
     {
       "title": "Fragance & aroma",
       "summary": "",
-      "instructions": "1. Smell the ground coffee in cups\n2. Wet the coffee with water in a 1:15 ratio\n3. Wait 4 minutes\n4. Break the crust and smell again\n5. Finish fragrance scoring",
+      "instructions":
+        "1. Smell the ground coffee in cups\n2. Wet the coffee with water in a 1:15 ratio\n3. Wait 4 minutes\n4. Break the crust and smell again\n5. Finish fragrance scoring",
       "image": "https://s3.amazonaws.com/coffeecademy/cupping-dry-aroma.jpg",
       "components": {
         "timer": {
@@ -69,7 +72,8 @@
     {
       "title": "Flavor, Aftertaste, Acidity, Body, & Balance",
       "summary": "",
-      "instructions": "1. Wait 6 minutes for cups to cool to ~140 deg\n2. Slurp samples of each coffee, rate the flavor, aftertaste, acidity, body, and balance",
+      "instructions":
+        "1. Wait 6 minutes for cups to cool to ~140 deg\n2. Slurp samples of each coffee, rate the flavor, aftertaste, acidity, body, and balance",
       "image": "https://s3.amazonaws.com/coffeecademy/cupping-tasting.jpg",
       "components": {
         "timer": {
@@ -80,7 +84,8 @@
     {
       "title": "Sweetness, Uniformity, & Cleanliness",
       "summary": "",
-      "instructions": "1. Wait 5 minutes for cups to cool ~120 deg\n2. Slurp coffees again, this time scoring sweetness, uniformity, and cleanliness",
+      "instructions":
+        "1. Wait 5 minutes for cups to cool ~120 deg\n2. Slurp coffees again, this time scoring sweetness, uniformity, and cleanliness",
       "image": "https://s3.amazonaws.com/coffeecademy/cupping-tasting.jpg",
       "components": {
         "timer": {
@@ -91,7 +96,8 @@
     {
       "title": "Scoring",
       "summary": "",
-      "instructions": "1. Fill out the score card, add up points from each coffee\n2. Talk about each cup briefly, before the reveal",
+      "instructions":
+        "1. Fill out the score card, add up points from each coffee\n2. Talk about each cup briefly, before the reveal",
       "image": "",
       "components": {
         "image": "https://s3.amazonaws.com/coffeecademy/cupping-cover.jpg"
@@ -100,7 +106,8 @@
     {
       "title": "The big reveal",
       "summary": "",
-      "instructions": "1. Guatemala Finca Insul (Washed), Onyx Coffee\n2. Hair Bender (Blend), Stumptown (grounds left out)\n3. Ethiopia Ardi (Dry Process), La Colombe\n4. Hair Bender (Blend), Stumptown\n5. Nicaragua La Bastilla (Dry Process), La Colombe",
+      "instructions":
+        "1. Ethiopia Bensa Shantawene (Natural), Onyx Coffee\n2. Hair Bender (Blend), Stumptown (grounds left out)\n3. Sumatra Highlands (Washed), Collectivo Coffee\n4. Hair Bender (Blend), Stumptown\n5. Guatemala Pulcal (Washed), Parlor Coffee",
       "image": "",
       "components": {
         "image": "https://s3.amazonaws.com/coffeecademy/cupping-reveal.gif"
